@@ -1,0 +1,13 @@
+{
+  "name": "thejungle",
+  "description": "scss utility functions and mixins",
+  "version": "0.0.1",
+  "main": "thejungle.scss",
+  "repository": "https://github.com/skt-t1-byungi/thejungle.git",
+  "author": "skt-t1-byungi <tiniwz@gmail.com>",
+  "license": "MIT",
+  "dependencies": {},
+  "devDependencies": {
+    "node-sass": "^4.9.3"
+  }
+}

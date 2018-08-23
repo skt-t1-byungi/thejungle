@@ -1,0 +1,26 @@
+@function em($px, $base: 16px) {
+  @return #{$px/$base}em;
+}
+
+@function rem($px, $base: 16px) {
+  @return #{$px/$base}rem;
+}
+
+@mixin size($width, $height: $width) {
+  width: $width; height: $height
+}
+
+@mixin ellipsis($width) {
+  max-width: $width;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+@mixin clearfix {
+  &::after{
+    content: '';
+    display: block;
+    clear: both;
+  }
+}
