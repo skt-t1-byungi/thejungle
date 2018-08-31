@@ -1,8 +1,20 @@
 @function em($px, $base: 16px) {
+  @if unitless($px) { 
+    $px: $px * 1px; 
+  }
+  @if unitless($base) { 
+    $base: $base * 1px; 
+  }
   @return #{$px/$base}em;
 }
 
 @function rem($px, $base: 16px) {
+  @if unitless($px) { 
+    $px: $px * 1px; 
+  }
+  @if unitless($base) { 
+    $base: $base * 1px; 
+  }
   @return #{$px/$base}rem;
 }
 

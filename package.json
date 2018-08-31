@@ -4,9 +4,17 @@
   "version": "0.0.1",
   "main": "thejungle.scss",
   "repository": "https://github.com/skt-t1-byungi/thejungle.git",
+  "files": [
+    "media.scss",
+    "reset.scss",
+    "thejungle.scss"
+  ],
   "author": "skt-t1-byungi <tiniwz@gmail.com>",
   "license": "MIT",
-  "dependencies": {},
+  "dependencies": {
+    "include-media": "^1.4.9",
+    "minireset.css": "^0.0.3"
+  },
   "devDependencies": {
     "node-sass": "^4.9.3"
   }
