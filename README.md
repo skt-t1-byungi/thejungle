@@ -1,8 +1,8 @@
 # thejungle
 
-> 🌴🐒 scss utility functions and mixins
-
 ![bengi](./thejungle.png)
+
+scss utility functions and mixins.
 
 ## Install
 ```sh
