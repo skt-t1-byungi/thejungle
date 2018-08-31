@@ -22,8 +22,11 @@
   width: $width; height: $height
 }
 
-@mixin ellipsis($width) {
-  max-width: $width;
+@mixin ellipsis($max-width: null) {
+  @if type-of($max-width) != null {
+    max-width: $max-width;
+  }
+  
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -71,40 +74,40 @@
   left: $left;
 }
 
-@mixin triangle($direction, $color, $width, $height: $width/2) {
+@mixin triangle($dir, $color, $width, $height: $width/2) {
   border-style: solid;
   height: 0;
   width: 0;
 
-  @if($direction == top) {
+  @if($dir == top) {
     border-color: transparent transparent $color transparent;
     border-width: 0 ($width/2) $height ($width/2);
   }
-  @if ($direction == bottom) {
+  @if ($dir == bottom) {
     border-color: $color transparent transparent transparent;
     border-width: $height ($width/2) 0 ($width/2);
   }
-  @if ($direction == right) {
+  @if ($dir == right) {
     border-color: transparent transparent transparent $color;
     border-width: ($height/2) 0 ($height/2) $width;
   }
-  @if ($direction == left) {
+  @if ($dir == left) {
     border-color: transparent $color transparent transparent;
     border-width: ($height/2) $width ($height/2) 0;
   }
-  @if ($direction == top-left) {
+  @if ($dir == top-left) {
     border-color: $color transparent transparent transparent;
     border-width: $height $width 0 0;
   }
-  @if ($direction == top-right) {
+  @if ($dir == top-right) {
     border-color: transparent $color transparent transparent;
     border-width: 0 $width $height 0;
   }
-  @if ($direction == bottom-left) {
+  @if ($dir == bottom-left) {
     border-color: transparent transparent transparent $color;
     border-width: $height 0 0 $width;
   }
-  @if ($direction == bottom-right) {
+  @if ($dir == bottom-right) {
     border-color: transparent transparent $color transparent;
     border-width: 0 0 $height $width;
   }
