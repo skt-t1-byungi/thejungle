@@ -24,3 +24,76 @@
     clear: both;
   }
 }
+
+@mixin stretch($top: null, $right: null, $bottom: null, $left: null) {
+  @if type-of($left) != number {
+    @if type-of($bottom) != number {
+      @if type-of($right) != number {
+        @if type-of($top) != number{
+          // when argument is 0
+          $top: 0;
+          $left: 0;
+          $right: 0;
+          $bottom: 0;
+        } @else {
+          // when argument is 1
+          $left: $top;
+          $bottom: $top;
+          $right: $top;
+        }
+      } @else {
+        // when argument is 2
+        $bottom: $top;
+        $left: $right;
+      }
+    } @else {
+      // when argument is 3
+      $left: $right;
+    }
+  }
+  
+  position: absolute;
+  top: $top;
+  right: $right;
+  bottom: $bottom;
+  left: $left;
+}
+
+@mixin triangle($direction, $color, $width, $height: $width/2) {
+  border-style: solid;
+  height: 0;
+  width: 0;
+
+  @if($direction == top) {
+    border-color: transparent transparent $color transparent;
+    border-width: 0 ($width/2) $height ($width/2);
+  }
+  @if ($direction == bottom) {
+    border-color: $color transparent transparent transparent;
+    border-width: $height ($width/2) 0 ($width/2);
+  }
+  @if ($direction == right) {
+    border-color: transparent transparent transparent $color;
+    border-width: ($height/2) 0 ($height/2) $width;
+  }
+  @if ($direction == left) {
+    border-color: transparent $color transparent transparent;
+    border-width: ($height/2) $width ($height/2) 0;
+  }
+  @if ($direction == top-left) {
+    border-color: $color transparent transparent transparent;
+    border-width: $height $width 0 0;
+  }
+  @if ($direction == top-right) {
+    border-color: transparent $color transparent transparent;
+    border-width: 0 $width $height 0;
+  }
+  @if ($direction == bottom-left) {
+    border-color: transparent transparent transparent $color;
+    border-width: $height 0 0 $width;
+  }
+  @if ($direction == bottom-right) {
+    border-color: transparent transparent $color transparent;
+    border-width: 0 0 $height $width;
+  }
+}
