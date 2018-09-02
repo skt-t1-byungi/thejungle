@@ -63,6 +63,7 @@ Convert pixel to rem.
 ```
 
 ### between(from, to [, from-screen=320px, to-screen=1200px])
+Convert a formula that satisfy between the two values.
 ```scss
 .a{
   font-size: between(10px, 100px, 400px, 1000px); // => calc(15vw - 50px);
