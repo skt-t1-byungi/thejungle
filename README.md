@@ -2,7 +2,7 @@
 
 ![bengi](./thejungle.png)
 
-scss utility functions and mixins.
+scss utility functions and mixins
 
 ## Install
 ```sh
@@ -16,10 +16,29 @@ yarn add thejungle
 // others
 @import 'node_modules/thejungle/thejungle';
 ```
-## Usage
+---
 
-### Function
-#### em(px[, base = 16px])
+## Loader
+### minireset
+[minireset](https://jgthms.com/minireset.css/) - A tiny modern CSS reset
+
+```scss
+@import '~thejungle/reset';
+// or
+@import 'node_modules/thejungle/reset';
+```
+
+### include-media
+[include-media](https://include-media.com/) - Simple, elegant and maintainable media queries in Sass
+
+```scss
+@import '~thejungle/media';
+// or
+@import 'node_modules/thejungle/media';
+```
+
+## Function
+### em(px [, base=16px])
 Convert pixel to em.
 ```scss
 .a{
@@ -31,7 +50,7 @@ Convert pixel to em.
 }
 ```
 
-#### rem(px[, base])
+### rem(px [, base])
 Convert pixel to rem.
 ```scss
 .a{
@@ -43,8 +62,8 @@ Convert pixel to rem.
 }
 ```
 
-### Mixin
-#### size(width[, height = width])
+## Mixin
+### size(width [, height=width])
 Set a size.
 ```scss
 .a{
@@ -55,7 +74,7 @@ Set a size.
 }
 ```
 
-#### ellipsis([max-width])
+### ellipsis(width)
 Set an ellipsis effect.
 ```scss
 // input
@@ -66,22 +85,14 @@ Set an ellipsis effect.
 // output
 .a{
   max-width: 100px;
+  display: inline-block;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
 }
 ```
 
-If no max-width
-```scss
-.a{
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-```
-
-#### clearfix
+### clearfix
 Set a clearfix.
 ```scss
 // input
@@ -97,7 +108,7 @@ Set a clearfix.
 }
 ```
 
-#### stretch(top, right, bottom, left)
+### stretch([top=0, right=top, bottom=top, left=top])
 Stretch a block.
 ```scss
 // input
@@ -115,7 +126,24 @@ Stretch a block.
 }
 ```
 
-#### triangle(direction, color, width[, height = width/2])
+Support shorthand.
+```scss
+.a{
+  @include stretch(10px) 
+  // => top: 10px; right: 10px; bottom: 10px; left: 10px;
+
+  @include stretch(10px, 50px) 
+  // => top: 10px; right: 50px; bottom: 10px; left: 50px;
+
+  @include stretch(10px, 50px, 100px) 
+  // => top: 10px; right: 50px; bottom: 100px; left: 50px;
+
+  @include stretch(10px, 50px, 100px, 200px) 
+  // => top: 10px; right: 50px; bottom: 100px; left: 200px;
+}
+```
+
+### triangle(direction, color, width [, height=width/2])
 Apply a triangle shape.
 ```scss
 // input
@@ -125,23 +153,24 @@ Apply a triangle shape.
 
 // output
 .a{
+  border-style: solid;
   height: 0;
   width: 0;
-  border-bottom: 30px solid #000;
-  border-left: 15px solid #000;
-  border-right: 15px solid #000;
+  border-color: transparent transparent #000 transparent;
+  border-width: 0 15px 15px 15px;
 }
 ```
+#### direction
+- top - ▲
+- right - 🞂
+- bottom - 🞃
+- left - 🞀
+- top-left - ◤
+- top-right - ◥
+- bottom-left - ◣
+- bottom-right - ◢
 
-### Importer
-#### [minireset](https://github.com/jgthms/minireset.css/)
-```scss
-@import '~thejungle/reset';
-```
-#### [include-media](https://github.com/eduardoboucas/include-media/)
-```scss
-@import '~thejungle/media';
-```
+---
 
 ## License
 MIT

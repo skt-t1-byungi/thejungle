@@ -22,11 +22,9 @@
   width: $width; height: $height
 }
 
-@mixin ellipsis($max-width: null) {
-  @if type-of($max-width) != null {
-    max-width: $max-width;
-  }
-  
+@mixin ellipsis($max-width) {
+  display: inline-block;
+  max-width: $max-width;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
