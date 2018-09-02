@@ -40,8 +40,8 @@ yarn add thejungle
 ```
 
 ## Function
-### em(px [, base=16px])
-Convert pixel to em.
+### em(size [, base=16px])
+Convert size to em.
 ```scss
 .a{
   font-size: em(12px); // => 0.75em
@@ -52,8 +52,8 @@ Convert pixel to em.
 }
 ```
 
-### rem(px [, base])
-Convert pixel to rem.
+### rem(size [, base])
+Convert size to rem.
 ```scss
 .a{
   font-size: rem(12px); // => 0.75rem

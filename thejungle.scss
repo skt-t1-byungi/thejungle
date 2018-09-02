@@ -1,21 +1,21 @@
-@function em($px, $base: 16px) {
-  @if unitless($px) { 
-    $px: $px * 1px; 
+@function em($size, $base: 16px) {
+  @if unitless($size) { 
+    $size: $size * 1px; 
   }
   @if unitless($base) { 
     $base: $base * 1px; 
   }
-  @return #{$px/$base}em;
+  @return #{$size/$base}em;
 }
 
-@function rem($px, $base: 16px) {
-  @if unitless($px) { 
-    $px: $px * 1px; 
+@function rem($size, $base: 16px) {
+  @if unitless($size) { 
+    $size: $size * 1px; 
   }
   @if unitless($base) { 
     $base: $base * 1px; 
   }
-  @return #{$px/$base}rem;
+  @return #{$size/$base}rem;
 }
 
 @function between($from, $to, $from-screen: 320px, $to-screen: 1200px) {
