@@ -11,6 +11,9 @@
   ],
   "author": "skt-t1-byungi <tiniwz@gmail.com>",
   "license": "MIT",
+  "scripts": {
+    "test": ""
+  },
   "dependencies": {
     "include-media": "^1.4.9",
     "minireset.css": "^0.0.3"
