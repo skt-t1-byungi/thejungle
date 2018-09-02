@@ -18,6 +18,12 @@
   @return #{$px/$base}rem;
 }
 
+@function between($from, $to, $from-screen: 320px, $to-screen: 1200px) {
+  $ratio: ($to - $from) / ($to-screen - $from-screen);
+  $fix: $ratio * $from-screen - $from;
+  @return calc(#{$ratio * 100}vw - #{$fix});
+}
+
 @mixin size($width, $height: $width) {
   width: $width; height: $height
 }
