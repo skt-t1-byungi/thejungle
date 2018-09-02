@@ -12,7 +12,7 @@
   "author": "skt-t1-byungi <tiniwz@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "test": ""
+    "test": "echo pass"
   },
   "dependencies": {
     "include-media": "^1.4.9",
