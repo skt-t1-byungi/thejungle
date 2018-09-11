@@ -5,7 +5,7 @@
   @if unitless($base) { 
     $base: $base * 1px; 
   }
-  @return #{$size/$base}em;
+  @return $size / $base * 1em;
 }
 
 @function rem($size, $base: 16px) {
@@ -15,7 +15,7 @@
   @if unitless($base) { 
     $base: $base * 1px; 
   }
-  @return #{$size/$base}rem;
+  @return $size / $base * 1rem;
 }
 
 @function between($from, $to, $from-screen: 320px, $to-screen: 1200px) {
