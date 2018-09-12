@@ -198,9 +198,9 @@ Apply a triangle shape.
 ```
 #### direction
 - top - ▲
-- right - 🞂
-- bottom - 🞃
-- left - 🞀
+- right - ►
+- bottom - ▼
+- left - ◄
 - top-left - ◤
 - top-right - ◥
 - bottom-left - ◣
