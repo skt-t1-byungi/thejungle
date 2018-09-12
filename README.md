@@ -39,6 +39,15 @@ yarn add thejungle
 @import 'node_modules/thejungle/media';
 ```
 
+### easings-css
+[easings-css](https://github.com/jacobbuck/easings-css) -Easing functions for CSS.
+
+```scss
+@import '~thejungle/easings';
+// or
+@import 'node_modules/thejungle/easings';
+```
+
 ## Function
 ### em(size [, base=16px])
 Convert size to em.
@@ -81,6 +90,23 @@ Set a size.
 }
 .b{
   @include size(50px, 100px) // => width: 50px; height: 100px;
+}
+```
+
+### text-hide()
+Hide text.
+```scss
+// input
+.a{
+  @include text-hide()
+}
+
+// output
+.a{
+  font: 0/0 a;
+  color: transparent;
+  text-shadow: none;
+  border: 0;
 }
 ```
 

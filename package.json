@@ -15,6 +15,7 @@
     "test": "echo pass"
   },
   "dependencies": {
+    "easings-css": "^1.0.0",
     "include-media": "^1.4.9",
     "minireset.css": "^0.0.3"
   },
