@@ -103,10 +103,8 @@ Hide text.
 
 // output
 .a{
-  font: 0/0 a;
-  color: transparent;
-  text-shadow: none;
-  border: 0;
+  overflow: hidden;
+  text-indent: -9999px;
 }
 ```
 

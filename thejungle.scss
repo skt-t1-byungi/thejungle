@@ -117,9 +117,7 @@
   }
 }
 
-@mixin text-hide($ignore-warning: false) {
-  font: 0/0 a;
-  color: transparent;
-  text-shadow: none;
-  border: 0;
+@mixin text-hide() {
+  overflow: hidden;
+  text-indent: -9999px;
 }
