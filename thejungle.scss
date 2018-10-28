@@ -121,3 +121,10 @@
   overflow: hidden;
   text-indent: -9999px;
 }
+
+@mixin column($count, $gap) {
+  width: calc(#{percentage(1/$count)} - #{$gap * (1 - 1/$count)});
+  &:not(:nth-child(#{$count})){
+    margin-right: $gap;
+  }
+}

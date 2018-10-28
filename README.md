@@ -204,7 +204,22 @@ Apply a triangle shape.
 - bottom-left - ◣
 - bottom-right - ◢
 
----
+
+### column(count, gap)
+```scss
+// input
+.column{
+  @include column(4, 10px)
+}
+
+// output
+.column {
+  width: calc(25% - 7.5px);
+}
+.column:not(:nth-child(4)) {
+  margin-right: 10px;
+}
+```
 
 ## License
 MIT
