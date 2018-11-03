@@ -1,26 +1,32 @@
 {
-  "name": "thejungle",
-  "description": "scss utility functions and mixins",
-  "version": "0.3.0",
-  "main": "thejungle.scss",
-  "repository": "https://github.com/skt-t1-byungi/thejungle.git",
-  "files": [
-    "media.scss",
-    "reset.scss",
-    "thejungle.scss",
-    "easings.scss"
-  ],
-  "author": "skt-t1-byungi <tiniwz@gmail.com>",
-  "license": "MIT",
-  "scripts": {
-    "test": "echo pass"
-  },
-  "dependencies": {
-    "easings-css": "^1.0.0",
-    "include-media": "^1.4.9",
-    "minireset.css": "^0.0.3"
-  },
-  "devDependencies": {
-    "node-sass": "^4.9.3"
-  }
+    "name": "thejungle",
+    "description": "scss utility functions and mixins",
+    "version": "0.3.0",
+    "main": "thejungle.scss",
+    "repository": "https://github.com/skt-t1-byungi/thejungle.git",
+    "files": [
+        "media.scss",
+        "reset.scss",
+        "thejungle.scss",
+        "easings.scss"
+    ],
+    "author": "skt-t1-byungi <tiniwz@gmail.com>",
+    "license": "MIT",
+    "scripts": {
+        "test": "ava"
+    },
+    "dependencies": {
+        "easings-css": "^1.0.0",
+        "include-media": "^1.4.9",
+        "minireset.css": "^0.0.3"
+    },
+    "devDependencies": {
+        "ava": "^0.25.0",
+        "eslint": "^5.8.0",
+        "eslint-config-byungi": "^0.2.1",
+        "node-sass": "^4.9.3"
+    },
+    "eslintConfig": {
+        "extends": "byungi"
+    }
 }

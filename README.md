@@ -206,6 +206,7 @@ Apply a triangle shape.
 
 
 ### column(count, gap)
+Set a column.
 ```scss
 // input
 .column{

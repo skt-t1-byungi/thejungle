@@ -1,130 +1,130 @@
 @function em($size, $base: 16px) {
-  @if unitless($size) { 
-    $size: $size * 1px; 
-  }
-  @if unitless($base) { 
-    $base: $base * 1px; 
-  }
-  @return $size / $base * 1em;
+    @if unitless($size) { 
+        $size: $size * 1px; 
+    }
+    @if unitless($base) { 
+        $base: $base * 1px; 
+    }
+    @return $size / $base * 1em;
 }
 
 @function rem($size, $base: 16px) {
-  @if unitless($size) { 
-    $size: $size * 1px; 
-  }
-  @if unitless($base) { 
-    $base: $base * 1px; 
-  }
-  @return $size / $base * 1rem;
+    @if unitless($size) { 
+        $size: $size * 1px; 
+    }
+    @if unitless($base) { 
+        $base: $base * 1px; 
+    }
+    @return $size / $base * 1rem;
 }
 
 @function between($from, $to, $from-screen: 320px, $to-screen: 1200px) {
-  $ratio: ($to - $from) / ($to-screen - $from-screen);
-  $fix: $ratio * $from-screen - $from;
-  @return calc(#{$ratio * 100}vw - #{$fix});
+    $ratio: ($to - $from) / ($to-screen - $from-screen);
+    $fix: $ratio * $from-screen - $from;
+    @return calc(#{$ratio * 100}vw - #{$fix});
 }
 
 @mixin size($width, $height: $width) {
-  width: $width; height: $height
+    width: $width; height: $height
 }
 
 @mixin ellipsis($max-width) {
-  display: inline-block;
-  max-width: $max-width;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
+    display: inline-block;
+    max-width: $max-width;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 @mixin clearfix {
-  &::after{
-    content: '';
-    display: block;
-    clear: both;
-  }
+    &::after{
+        content: '';
+        display: block;
+        clear: both;
+    }
 }
 
 @mixin stretch($top: null, $right: null, $bottom: null, $left: null) {
-  @if type-of($left) != number {
-    @if type-of($bottom) != number {
-      @if type-of($right) != number {
-        @if type-of($top) != number{
-          // when argument is 0
-          $top: 0;
-          $left: 0;
-          $right: 0;
-          $bottom: 0;
+    @if type-of($left) != number {
+        @if type-of($bottom) != number {
+            @if type-of($right) != number {
+                @if type-of($top) != number{
+                    // when argument is 0
+                    $top: 0;
+                    $left: 0;
+                    $right: 0;
+                    $bottom: 0;
+                } @else {
+                    // when argument is 1
+                    $left: $top;
+                    $bottom: $top;
+                    $right: $top;
+                }
+            } @else {
+                // when argument is 2
+                $bottom: $top;
+                $left: $right;
+            }
         } @else {
-          // when argument is 1
-          $left: $top;
-          $bottom: $top;
-          $right: $top;
+            // when argument is 3
+            $left: $right;
         }
-      } @else {
-        // when argument is 2
-        $bottom: $top;
-        $left: $right;
-      }
-    } @else {
-      // when argument is 3
-      $left: $right;
     }
-  }
-  
-  position: absolute;
-  top: $top;
-  right: $right;
-  bottom: $bottom;
-  left: $left;
+    
+    position: absolute;
+    top: $top;
+    right: $right;
+    bottom: $bottom;
+    left: $left;
 }
 
 @mixin triangle($dir, $color, $width, $height: $width/2) {
-  border-style: solid;
-  height: 0;
-  width: 0;
-
-  @if($dir == top) {
-    border-color: transparent transparent $color transparent;
-    border-width: 0 ($width/2) $height ($width/2);
-  }
-  @if ($dir == bottom) {
-    border-color: $color transparent transparent transparent;
-    border-width: $height ($width/2) 0 ($width/2);
-  }
-  @if ($dir == right) {
-    border-color: transparent transparent transparent $color;
-    border-width: ($height/2) 0 ($height/2) $width;
-  }
-  @if ($dir == left) {
-    border-color: transparent $color transparent transparent;
-    border-width: ($height/2) $width ($height/2) 0;
-  }
-  @if ($dir == top-left) {
-    border-color: $color transparent transparent transparent;
-    border-width: $height $width 0 0;
-  }
-  @if ($dir == top-right) {
-    border-color: transparent $color transparent transparent;
-    border-width: 0 $width $height 0;
-  }
-  @if ($dir == bottom-left) {
-    border-color: transparent transparent transparent $color;
-    border-width: $height 0 0 $width;
-  }
-  @if ($dir == bottom-right) {
-    border-color: transparent transparent $color transparent;
-    border-width: 0 0 $height $width;
-  }
+    border-style: solid;
+    height: 0;
+    width: 0;
+    
+    @if($dir == top) {
+        border-color: transparent transparent $color transparent;
+        border-width: 0 ($width/2) $height ($width/2);
+    }
+    @if ($dir == bottom) {
+        border-color: $color transparent transparent transparent;
+        border-width: $height ($width/2) 0 ($width/2);
+    }
+    @if ($dir == right) {
+        border-color: transparent transparent transparent $color;
+        border-width: ($height/2) 0 ($height/2) $width;
+    }
+    @if ($dir == left) {
+        border-color: transparent $color transparent transparent;
+        border-width: ($height/2) $width ($height/2) 0;
+    }
+    @if ($dir == top-left) {
+        border-color: $color transparent transparent transparent;
+        border-width: $height $width 0 0;
+    }
+    @if ($dir == top-right) {
+        border-color: transparent $color transparent transparent;
+        border-width: 0 $width $height 0;
+    }
+    @if ($dir == bottom-left) {
+        border-color: transparent transparent transparent $color;
+        border-width: $height 0 0 $width;
+    }
+    @if ($dir == bottom-right) {
+        border-color: transparent transparent $color transparent;
+        border-width: 0 0 $height $width;
+    }
 }
 
 @mixin text-hide() {
-  overflow: hidden;
-  text-indent: -9999px;
+    overflow: hidden;
+    text-indent: -9999px;
 }
 
 @mixin column($count, $gap) {
-  width: calc(#{percentage(1/$count)} - #{$gap * (1 - 1/$count)});
-  &:not(:nth-child(#{$count})){
-    margin-right: $gap;
-  }
+    width: calc(#{percentage(1/$count)} - #{$gap * (1 - 1/$count)});
+    &:not(:nth-child(#{$count})){
+        margin-right: $gap;
+    }
 }
