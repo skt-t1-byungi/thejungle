@@ -137,3 +137,12 @@ test('column',
         margin-right: 10px;
     }`
 )
+
+test.regex('anime',
+    `.a{ 
+        @include anime(1s infinite){
+            from{width: 0}
+            to{width: 100%}
+        }
+    }`,
+    /\.a{animation:__ANIME__(\S+?) 1s infinite}@keyframes __ANIME__\1{from{width:0}to{width:100%}}/)
