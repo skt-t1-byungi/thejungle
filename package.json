@@ -1,7 +1,7 @@
 {
     "name": "thejungle",
     "description": "scss utility functions and mixins",
-    "version": "0.3.2",
+    "version": "0.3.3",
     "main": "thejungle.scss",
     "repository": "https://github.com/skt-t1-byungi/thejungle.git",
     "files": [
