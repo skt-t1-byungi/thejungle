@@ -217,7 +217,7 @@ Set a column.
 .column {
     width: calc(25% - 7.5px);
 }
-.column:not(:nth-child(4)) {
+.column:not(:nth-child(4n)) {
     margin-right: 10px;
 }
 ```

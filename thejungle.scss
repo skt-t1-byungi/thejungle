@@ -124,7 +124,7 @@
 
 @mixin column($count, $gap) {
     width: calc(#{percentage(1/$count)} - #{$gap * (1 - 1/$count)});
-    &:not(:nth-child(#{$count})){
+    &:not(:nth-child(#{$count}n)){
         margin-right: $gap;
     }
 }

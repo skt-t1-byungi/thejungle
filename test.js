@@ -133,7 +133,7 @@ test('column',
     `.a {
         width: calc(25% - 7.5px);
     }
-    .a:not(:nth-child(4)) {
+    .a:not(:nth-child(4n)) {
         margin-right: 10px;
     }`
 )
