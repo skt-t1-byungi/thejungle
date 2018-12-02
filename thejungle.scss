@@ -129,8 +129,8 @@
     }
 }
 
-@mixin anime($anime-options) {
-    $name: __ANIME__#{unique_id()};
+@mixin animate($anime-options) {
+    $name: __ANIMATE__#{unique_id()};
     animation: $name $anime-options;
     @keyframes #{$name} {@content}
 }

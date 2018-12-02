@@ -138,11 +138,11 @@ test('column',
     }`
 )
 
-test.regex('anime',
+test.regex('animate',
     `.a{ 
-        @include anime(1s infinite){
+        @include animate(1s infinite){
             from{width: 0}
             to{width: 100%}
         }
     }`,
-    /\.a{animation:__ANIME__(\S+?) 1s infinite}@keyframes __ANIME__\1{from{width:0}to{width:100%}}/)
+    /\.a{animation:__ANIMATE__(\S+?) 1s infinite}@keyframes __ANIMATE__\1{from{width:0}to{width:100%}}/)

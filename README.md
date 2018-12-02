@@ -222,13 +222,13 @@ Set a column.
 }
 ```
 
-### anime(anime-options)
+### animate(options)
 Sets a one-time keyframe animation.
 
 ```scss
 // input
 .a{ 
-    @include anime(1s infinite){
+    @include animate(1s infinite){
         from{ width: 0 }
         to{ width: 100% }
     }
@@ -236,9 +236,9 @@ Sets a one-time keyframe animation.
 
 // output
 .a{ 
-    animation: __ANIME__u0bd4b920 1s infinite; // Create unique keyframe ID.
+    animation: __ANIMATE__u0bd4b920 1s infinite; // Create unique keyframe ID.
 }
-@keyframes __ANIME__u0bd4b920 {
+@keyframes __ANIMATE__u0bd4b920 {
     from{ width: 0 }
     to{ width: 100% }
 }
