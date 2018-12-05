@@ -205,7 +205,7 @@ Apply a triangle shape.
 - bottom-right - ◢
 
 
-### column(count, gap, fix=0)
+### column(count, gap[, fix=0])
 Set a column.
 ```scss
 // input
