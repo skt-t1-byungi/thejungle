@@ -122,10 +122,10 @@
     text-indent: -9999px;
 }
 
-@mixin column($count, $gap) {
+@mixin column($count, $gap, $fix: 0) {
     width: calc(#{percentage(1/$count)} - #{$gap * (1 - 1/$count)});
     &:not(:nth-child(#{$count}n)){
-        margin-right: $gap;
+        margin-right: $gap + $fix;
     }
 }
 

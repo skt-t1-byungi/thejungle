@@ -205,12 +205,12 @@ Apply a triangle shape.
 - bottom-right - ◢
 
 
-### column(count, gap)
+### column(count, gap, fix=0)
 Set a column.
 ```scss
 // input
 .column{
-    @include column(4, 10px)
+    @include column(4, 10px, -0.001px)
 }
 
 // output
@@ -218,7 +218,7 @@ Set a column.
     width: calc(25% - 7.5px);
 }
 .column:not(:nth-child(4n)) {
-    margin-right: 10px;
+    margin-right: 9.999px;
 }
 ```
 

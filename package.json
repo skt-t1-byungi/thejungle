@@ -22,9 +22,9 @@
     },
     "devDependencies": {
         "ava": "^0.25.0",
-        "eslint": "^5.8.0",
-        "eslint-config-byungi": "^0.2.1",
-        "node-sass": "^4.9.3"
+        "eslint": "^5.9.0",
+        "eslint-config-byungi": "^0.2.3",
+        "node-sass": "^4.10.0"
     },
     "eslintConfig": {
         "extends": "byungi"

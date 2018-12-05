@@ -138,6 +138,16 @@ test('column',
     }`
 )
 
+test('column #fixed',
+    `.a{ @include column(4, 10px, -0.001px) }`,
+    `.a {
+        width: calc(25% - 7.5px);
+    }
+    .a:not(:nth-child(4n)) {
+        margin-right: 9.999px;
+    }`
+)
+
 test.regex('animate',
     `.a{ 
         @include animate(1s infinite){
