@@ -4,6 +4,17 @@
     "version": "0.4.1",
     "main": "thejungle.scss",
     "repository": "https://github.com/skt-t1-byungi/thejungle.git",
+    "keywords": [
+        "scss",
+        "sass",
+        "css",
+        "mixin",
+        "helper",
+        "mixins",
+        "helpers",
+        "functions",
+        "util"
+    ],
     "files": [
         "media.scss",
         "reset.scss",

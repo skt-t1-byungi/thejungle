@@ -5,6 +5,8 @@
 scss utility functions and mixins
 
 [![npm](https://img.shields.io/npm/v/thejungle.svg?style=flat-square)](https://www.npmjs.com/package/thejungle)
+[![npm](https://img.shields.io/npm/dt/thejungle.svg?style=flat-square)](https://www.npmjs.com/package/thejungle)
+
 
 ## Install
 ```sh
