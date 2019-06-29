@@ -1,7 +1,7 @@
 const test = require('./helpers')
 
 test('em',
-    `.a{ 
+    `.a{
         font-size: em(12px);
         .b{
             font-size: em(10px, 12px);
@@ -12,7 +12,7 @@ test('em',
 )
 
 test('rem',
-    `.a{ 
+    `.a{
         font-size: rem(12px);
         .b{
             font-size: rem(10px, 12px);
@@ -149,7 +149,7 @@ test('column #fixed',
 )
 
 test.regex('animate',
-    `.a{ 
+    `.a{
         @include animate(1s infinite){
             from{width: 0}
             to{width: 100%}
