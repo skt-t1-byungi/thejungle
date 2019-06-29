@@ -1,8 +1,7 @@
 # thejungle
+> scss utility collection
 
 ![bengi](./thejungle.png)
-
-scss utility functions and mixins
 
 [![npm](https://img.shields.io/npm/v/thejungle.svg?style=flat-square)](https://www.npmjs.com/package/thejungle)
 [![npm](https://img.shields.io/npm/dt/thejungle.svg?style=flat-square)](https://www.npmjs.com/package/thejungle)
@@ -10,48 +9,38 @@ scss utility functions and mixins
 
 ## Install
 ```sh
-yarn add thejungle
+npm install thejungle
 ```
 
 ```scss
 // If use sass-loader,
 @import '~thejungle';
 
-// others
+// or
 @import 'node_modules/thejungle/thejungle';
 ```
 ---
 
-## Loader
-### minireset
-[minireset](https://jgthms.com/minireset.css/) - A tiny modern CSS reset
+## Usage
+### Loaders
+- [minireset](https://jgthms.com/minireset.css/) - A tiny modern CSS reset
+- [include-media](https://include-media.com/) - Simple, elegant and maintainable media queries in Sass
+- [easings-css](https://github.com/jacobbuck/easings-css) - Easing functions for CSS.
 
 ```scss
+// If use sass-loader,
 @import '~thejungle/reset';
+@import '~thejungle/media';
+@import '~thejungle/easings';
+
 // or
 @import 'node_modules/thejungle/reset';
-```
-
-### include-media
-[include-media](https://include-media.com/) - Simple, elegant and maintainable media queries in Sass
-
-```scss
-@import '~thejungle/media';
-// or
 @import 'node_modules/thejungle/media';
-```
-
-### easings-css
-[easings-css](https://github.com/jacobbuck/easings-css) -Easing functions for CSS.
-
-```scss
-@import '~thejungle/easings';
-// or
 @import 'node_modules/thejungle/easings';
 ```
 
-## Function
-### em(size [, base=16px])
+### Functions
+#### em(size [, base=16px])
 Convert size to em.
 ```scss
 .a{
@@ -63,7 +52,7 @@ Convert size to em.
 }
 ```
 
-### rem(size [, base])
+#### rem(size [, base])
 Convert size to rem.
 ```scss
 .a{
@@ -75,7 +64,7 @@ Convert size to rem.
 }
 ```
 
-### between(from, to [, from-screen=320px, to-screen=1200px])
+#### between(from, to [, from-screen=320px, to-screen=1200px])
 Convert a formula that satisfy between the two values.
 ```scss
 .a{
@@ -83,8 +72,8 @@ Convert a formula that satisfy between the two values.
 }
 ```
 
-## Mixin
-### size(width [, height=width])
+### Mixins
+#### size(width [, height=width])
 Set a size.
 ```scss
 .a{
@@ -95,30 +84,30 @@ Set a size.
 }
 ```
 
-### text-hide()
+#### text-hide()
 Hide text.
 ```scss
-// input
 .a{
     @include text-hide()
 }
-
-// output
+```
+`output`
+```css
 .a{
     overflow: hidden;
     text-indent: -9999px;
 }
 ```
 
-### ellipsis(width)
+#### ellipsis(width)
 Set an ellipsis effect.
 ```scss
-// input
 .a{
     @include ellipsis(100px)
 }
-
-// output
+```
+`output`
+```css
 .a{
     max-width: 100px;
     display: inline-block;
@@ -128,15 +117,15 @@ Set an ellipsis effect.
 }
 ```
 
-### clearfix
+#### clearfix
 Set a clearfix.
 ```scss
-// input
 .a{
     @include clearfix
 }
-
-// output
+```
+`output`
+```css
 .a::after{
     content: '';
     display: block;
@@ -144,15 +133,15 @@ Set a clearfix.
 }
 ```
 
-### stretch([top=0, right=top, bottom=top, left=top])
+#### stretch([top=0, right=top, bottom=top, left=top])
 Stretch a block.
 ```scss
-// input
 .a{
     @include stretch
 }
-
-// output
+```
+`output`
+```css
 .a{
     position: absolute;
     top: 0;
@@ -165,29 +154,29 @@ Stretch a block.
 Support shorthand.
 ```scss
 .a{
-    @include stretch(10px) 
+    @include stretch(10px)
     // => top: 10px; right: 10px; bottom: 10px; left: 10px;
 
-    @include stretch(10px, 50px) 
+    @include stretch(10px, 50px)
     // => top: 10px; right: 50px; bottom: 10px; left: 50px;
 
-    @include stretch(10px, 50px, 100px) 
+    @include stretch(10px, 50px, 100px)
     // => top: 10px; right: 50px; bottom: 100px; left: 50px;
 
-    @include stretch(10px, 50px, 100px, 200px) 
+    @include stretch(10px, 50px, 100px, 200px)
     // => top: 10px; right: 50px; bottom: 100px; left: 200px;
 }
 ```
 
-### triangle(direction, color, width [, height=width/2])
+#### triangle(direction, color, width [, height=width/2])
 Apply a triangle shape.
 ```scss
-// input
 .a{
     @include triangle(top, #000, 30px)
 }
-
-// output
+```
+`output`
+```css
 .a{
     border-style: solid;
     height: 0;
@@ -196,26 +185,26 @@ Apply a triangle shape.
     border-width: 0 15px 15px 15px;
 }
 ```
-#### direction
-- top - ▲
-- right - ►
-- bottom - ▼
-- left - ◄
-- top-left - ◤
-- top-right - ◥
-- bottom-left - ◣
-- bottom-right - ◢
+##### direction
+- top
+- right
+- bottom
+- left
+- top-left
+- top-right
+- bottom-left
+- bottom-right
 
 
-### column(count, gap[, fix=0])
+#### column(count, gap[, fix=0])
 Set a column.
 ```scss
-// input
 .column{
     @include column(4, 10px, -0.001px)
 }
-
-// output
+```
+`output`
+```css
 .column {
     width: calc(25% - 7.5px);
 }
@@ -224,21 +213,21 @@ Set a column.
 }
 ```
 
-### animate(options)
+#### animate(options)
 Sets a one-time keyframe animation.
 
 ```scss
-// input
-.a{ 
+.a{
     @include animate(1s infinite){
         from{ width: 0 }
         to{ width: 100% }
     }
 }
-
-// output
-.a{ 
-    animation: __ANIMATE__u0bd4b920 1s infinite; // Create unique keyframe ID.
+```
+`output`
+```css
+.a{
+    animation: __ANIMATE__u0bd4b920 1s infinite; /* Create unique keyframe ID. */
 }
 @keyframes __ANIMATE__u0bd4b920 {
     from{ width: 0 }

@@ -1,18 +1,15 @@
 {
     "name": "thejungle",
-    "description": "scss utility functions and mixins",
+    "description": "scss utility collection",
     "version": "0.4.2",
     "main": "thejungle.scss",
     "repository": "https://github.com/skt-t1-byungi/thejungle.git",
     "keywords": [
         "scss",
         "sass",
-        "css",
         "mixin",
-        "helper",
         "mixins",
-        "helpers",
-        "functions",
+        "helper",
         "util"
     ],
     "files": [
