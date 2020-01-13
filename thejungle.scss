@@ -1,19 +1,19 @@
 @function em($size, $base: 16px) {
-    @if unitless($size) { 
-        $size: $size * 1px; 
+    @if unitless($size) {
+        $size: $size * 1px;
     }
-    @if unitless($base) { 
-        $base: $base * 1px; 
+    @if unitless($base) {
+        $base: $base * 1px;
     }
     @return $size / $base * 1em;
 }
 
 @function rem($size, $base: 16px) {
-    @if unitless($size) { 
-        $size: $size * 1px; 
+    @if unitless($size) {
+        $size: $size * 1px;
     }
-    @if unitless($base) { 
-        $base: $base * 1px; 
+    @if unitless($base) {
+        $base: $base * 1px;
     }
     @return $size / $base * 1rem;
 }
@@ -70,7 +70,7 @@
             $left: $right;
         }
     }
-    
+
     position: absolute;
     top: $top;
     right: $right;
@@ -82,7 +82,7 @@
     border-style: solid;
     height: 0;
     width: 0;
-    
+
     @if($dir == top) {
         border-color: transparent transparent $color transparent;
         border-width: 0 ($width/2) $height ($width/2);
