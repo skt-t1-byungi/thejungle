@@ -22,22 +22,6 @@ npm install thejungle
 ---
 
 ## Usage
-### Loaders
-- [minireset](https://jgthms.com/minireset.css/) - A tiny modern CSS reset
-- [include-media](https://include-media.com/) - Simple, elegant and maintainable media queries in Sass
-- [easings-css](https://github.com/jacobbuck/easings-css) - Easing functions for CSS.
-
-```scss
-// If use sass-loader,
-@import '~thejungle/reset';
-@import '~thejungle/media';
-@import '~thejungle/easings';
-
-// or
-@import 'node_modules/thejungle/reset';
-@import 'node_modules/thejungle/media';
-@import 'node_modules/thejungle/easings';
-```
 
 ### Functions
 #### em(size [, base=16px])
@@ -214,7 +198,7 @@ Set a column.
 ```
 
 #### animate(options)
-Sets a one-time keyframe animation.
+Set a keyframe animation.
 
 ```scss
 .a{
@@ -233,6 +217,23 @@ Sets a one-time keyframe animation.
     from{ width: 0 }
     to{ width: 100% }
 }
+```
+
+### Loaders
+- [minireset](https://jgthms.com/minireset.css/) - A tiny modern CSS reset
+- [include-media](https://include-media.com/) - Simple, elegant and maintainable media queries in Sass
+- [easings-css](https://github.com/jacobbuck/easings-css) - Easing functions for CSS.
+
+```scss
+// If use sass-loader,
+@import '~thejungle/reset';
+@import '~thejungle/media';
+@import '~thejungle/easings';
+
+// or
+@import 'node_modules/thejungle/reset';
+@import 'node_modules/thejungle/media';
+@import 'node_modules/thejungle/easings';
 ```
 
 ## License
