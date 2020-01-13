@@ -26,12 +26,12 @@
     "dependencies": {
         "easings-css": "^1.0.0",
         "include-media": "^1.4.9",
-        "minireset.css": "^0.0.5"
+        "minireset.css": "^0.0.6"
     },
     "devDependencies": {
         "ava": "^2.1.0",
         "eslint": "^6.0.1",
-        "eslint-config-byungi": "^0.2.3",
+        "eslint-config-byungi": "^0.7.7",
         "node-sass": "^4.10.0"
     },
     "eslintConfig": {
