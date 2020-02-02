@@ -62,7 +62,7 @@ Returns a formula that satisfies values ​​at each screen.
 ### Mixin
 
 #### size(width [, height=width])
-Set `width` adn `height`.
+Set `width` and `height`.
 ```scss
 .a {
     @include size(50px) // => width: 50px; height: 50px;
