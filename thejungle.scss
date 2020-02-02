@@ -3,7 +3,7 @@
         @return $n;
     }
     @if unit($n) != px {
-        @error 'Only pixel unit. but "#{unit($n)}"!'
+        @error 'Only pixel unit. but "#{unit($n)}"!';
     }
     @return $n / 1px;
 }
