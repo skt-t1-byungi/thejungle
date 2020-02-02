@@ -13,71 +13,76 @@ npm install thejungle
 ```
 
 ```scss
-// If use sass-loader,
+// If use sass-loader
 @import '~thejungle';
 
 // or
 @import 'node_modules/thejungle/thejungle';
 ```
----
 
-## Usage
+## API
 
-### Functions
-#### em(size [, base=16px])
-Convert size to em.
+### Function
+
+#### em(px [, base=16px])
+Convert `px` to `em`.
 ```scss
-.a{
+.a {
     font-size: em(12px); // => 0.75em
 
-    .b{
+    .b {
         font-size: em(10px, 12px); // => 0.833em
     }
 }
 ```
 
-#### rem(size [, base])
-Convert size to rem.
+#### rem(px [, base])
+Convert `px` to `rem`.
 ```scss
-.a{
+.a {
     font-size: rem(12px); // => 0.75rem
 
-    .b{
+    .b {
         font-size: em(10px, 12px); // => 0.833rem
     }
 }
 ```
 
 #### between(from, to [, from-screen=320px, to-screen=1200px])
-Convert a formula that satisfy between the two values.
+Returns a formula that satisfies values ​​at each screen.
+
 ```scss
-.a{
+.a {
     font-size: between(10px, 100px, 400px, 1000px); // => calc(15vw - 50px);
 }
 ```
 
-### Mixins
+---
+
+### Mixin
+
 #### size(width [, height=width])
-Set a size.
+Set `width` adn `height`.
 ```scss
-.a{
+.a {
     @include size(50px) // => width: 50px; height: 50px;
 }
-.b{
+
+.b {
     @include size(50px, 100px) // => width: 50px; height: 100px;
 }
 ```
 
 #### text-hide()
-Hide text.
+Hide a text.
 ```scss
-.a{
+.a {
     @include text-hide()
 }
 ```
 `output`
 ```css
-.a{
+.a {
     overflow: hidden;
     text-indent: -9999px;
 }
@@ -86,13 +91,13 @@ Hide text.
 #### ellipsis(width)
 Set an ellipsis effect.
 ```scss
-.a{
+.a {
     @include ellipsis(100px)
 }
 ```
 `output`
 ```css
-.a{
+.a {
     max-width: 100px;
     display: inline-block;
     white-space: nowrap;
@@ -104,13 +109,13 @@ Set an ellipsis effect.
 #### clearfix
 Set a clearfix.
 ```scss
-.a{
+.a {
     @include clearfix
 }
 ```
 `output`
 ```css
-.a::after{
+.a::after {
     content: '';
     display: block;
     clear: both;
@@ -118,15 +123,15 @@ Set a clearfix.
 ```
 
 #### stretch([top=0, right=top, bottom=top, left=top])
-Stretch a block.
+Stretch a element.
 ```scss
-.a{
+.a {
     @include stretch
 }
 ```
 `output`
 ```css
-.a{
+.a {
     position: absolute;
     top: 0;
     right: 0;
@@ -135,9 +140,9 @@ Stretch a block.
 }
 ```
 
-Support shorthand.
+###### Support shorthand.
 ```scss
-.a{
+.a {
     @include stretch(10px)
     // => top: 10px; right: 10px; bottom: 10px; left: 10px;
 
@@ -153,15 +158,15 @@ Support shorthand.
 ```
 
 #### triangle(direction, color, width [, height=width/2])
-Apply a triangle shape.
+Set triangle shape.
 ```scss
-.a{
+.a {
     @include triangle(top, #000, 30px)
 }
 ```
 `output`
 ```css
-.a{
+.a {
     border-style: solid;
     height: 0;
     width: 0;
@@ -183,8 +188,8 @@ Apply a triangle shape.
 #### column(count, gap[, fix=0])
 Set a column.
 ```scss
-.column{
-    @include column(4, 10px, -0.001px)
+.column {
+    @include column(4, 10px)
 }
 ```
 `output`
@@ -193,7 +198,7 @@ Set a column.
     width: calc(25% - 7.5px);
 }
 .column:not(:nth-child(4n)) {
-    margin-right: 9.999px;
+    margin-right: 10px;
 }
 ```
 
@@ -201,8 +206,8 @@ Set a column.
 Set a keyframe animation.
 
 ```scss
-.a{
-    @include animate(1s infinite){
+.a {
+    @include animate(1s infinite) {
         from{ width: 0 }
         to{ width: 100% }
     }
@@ -210,22 +215,26 @@ Set a keyframe animation.
 ```
 `output`
 ```css
-.a{
-    animation: __ANIMATE__u0bd4b920 1s infinite; /* Create unique keyframe ID. */
+.a {
+    animation: __ANIMATE__u0bd4b920 1s infinite; /* 👈 "__ANIMATE__u0bd4b920" is unique. */
 }
+
 @keyframes __ANIMATE__u0bd4b920 {
     from{ width: 0 }
     to{ width: 100% }
 }
 ```
 
-### Loaders
+---
+
+### Loader
+
 - [minireset](https://jgthms.com/minireset.css/) - A tiny modern CSS reset
 - [include-media](https://include-media.com/) - Simple, elegant and maintainable media queries in Sass
 - [easings-css](https://github.com/jacobbuck/easings-css) - Easing functions for CSS.
 
 ```scss
-// If use sass-loader,
+// If use sass-loader
 @import '~thejungle/reset';
 @import '~thejungle/media';
 @import '~thejungle/easings';
