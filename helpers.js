@@ -8,5 +8,5 @@ const render = code => sass.renderSync({
     precision: 3
 }).css.toString()
 
-const t = module.exports = (desc, ipt, expected) => test(desc, t => t.is(render(ipt), render(expected)))
-t.regex = (desc, ipt, regex) => test(desc, t => t.regex(render(ipt), regex))
+const t = module.exports = (desc, ipt, expected) => test(desc, t => { t.is(render(ipt), render(expected)) })
+t.regex = (desc, ipt, regex) => test(desc, t => { t.regex(render(ipt), regex) })

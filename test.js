@@ -23,27 +23,27 @@ test('rem',
 )
 
 test('between',
-    `.a{ font-size: between(10px, 100px, 400px, 1000px) }`,
-    `.a{ font-size: calc(15vw - 50px)}`
+    '.a{ font-size: between(10px, 100px, 400px, 1000px) }',
+    '.a{ font-size: calc(15vw - 50px)}'
 )
 
 test('size #1',
-    `.a{ @include size(50px) }`,
-    `.a{ width: 50px; height: 50px }`
+    '.a{ @include size(50px) }',
+    '.a{ width: 50px; height: 50px }'
 )
 
 test('size #2',
-    `.a{ @include size(50px, 100px) }`,
-    `.a{ width: 50px; height: 100px }`
+    '.a{ @include size(50px, 100px) }',
+    '.a{ width: 50px; height: 100px }'
 )
 
 test('text-hide',
-    `.a{ @include text-hide() }`,
-    `.a{ overflow: hidden; text-indent: -9999px }`
+    '.a{ @include text-hide() }',
+    '.a{ overflow: hidden; text-indent: -9999px }'
 )
 
 test('ellipsis',
-    `.a{ @include ellipsis(100px) }`,
+    '.a{ @include ellipsis(100px) }',
     `.a{
         display: inline-block;
         max-width: 100px;
@@ -54,7 +54,7 @@ test('ellipsis',
 )
 
 test('clearfix',
-    `.a{ @include clearfix }`,
+    '.a{ @include clearfix }',
     `.a::after{
         content: '';
         display: block;
@@ -63,7 +63,7 @@ test('clearfix',
 )
 
 test('stretch',
-    `.a{ @include stretch }`,
+    '.a{ @include stretch }',
     `.a{
         position: absolute;
         top: 0;
@@ -74,7 +74,7 @@ test('stretch',
 )
 
 test('stretch #shorthand - 1',
-    `.a{ @include stretch(10px) }`,
+    '.a{ @include stretch(10px) }',
     `.a{
         position: absolute;
         top: 10px;
@@ -85,7 +85,7 @@ test('stretch #shorthand - 1',
 )
 
 test('stretch #shorthand - 2',
-    `.a{ @include stretch(10px, 50px) }`,
+    '.a{ @include stretch(10px, 50px) }',
     `.a{
         position: absolute;
         top: 10px;
@@ -96,7 +96,7 @@ test('stretch #shorthand - 2',
 )
 
 test('stretch #shorthand - 3',
-    `.a{ @include stretch(10px, 50px, 100px) }`,
+    '.a{ @include stretch(10px, 50px, 100px) }',
     `.a{
         position: absolute;
         top: 10px;
@@ -107,7 +107,7 @@ test('stretch #shorthand - 3',
 )
 
 test('stretch #shorthand - 4',
-    `.a{ @include stretch(10px, 50px, 100px, 200px) }`,
+    '.a{ @include stretch(10px, 50px, 100px, 200px) }',
     `.a{
         position: absolute;
         top: 10px;
@@ -118,7 +118,7 @@ test('stretch #shorthand - 4',
 )
 
 test('triangle #top',
-    `.a{ @include triangle(top, #000, 30px) }`,
+    '.a{ @include triangle(top, #000, 30px) }',
     `.a{
         border-style: solid;
         height: 0;
@@ -129,7 +129,7 @@ test('triangle #top',
 )
 
 test('column',
-    `.a{ @include column(4, 10px) }`,
+    '.a{ @include column(4, 10px) }',
     `.a {
         width: calc(25% - 7.5px);
     }
@@ -139,7 +139,7 @@ test('column',
 )
 
 test('column #fixed',
-    `.a{ @include column(4, 10px, -0.001px) }`,
+    '.a{ @include column(4, 10px, -0.001px) }',
     `.a {
         width: calc(25% - 7.5px);
     }
