@@ -21,7 +21,7 @@
     "author": "skt-t1-byungi <tiniwz@gmail.com>",
     "license": "MIT",
     "scripts": {
-        "test": "ava"
+        "test": "jest"
     },
     "dependencies": {
         "easings-css": "^1.0.0",
@@ -29,9 +29,11 @@
         "minireset.css": "^0.0.6"
     },
     "devDependencies": {
-        "ava": "^3.1.0",
+        "@types/jest": "^25.2.1",
+        "css-isolate": "^0.0.4",
         "eslint": "^6.0.1",
-        "eslint-config-byungi": "^0.7.7",
+        "eslint-config-byungi": "^0.10.4",
+        "jest": "^25.3.0",
         "node-sass": "^4.13.1"
     },
     "eslintConfig": {
