@@ -230,7 +230,7 @@ Set a keyframe animation.
 ### Loader
 
 - [minireset](https://jgthms.com/minireset.css/) - A tiny modern CSS reset
-- [include-media](https://include-media.com/) - Simple, elegant and maintainable media queries in Sass
+- [include-media](https://eduardoboucas.github.io/include-media/) - Simple, elegant and maintainable media queries in Sass
 - [easings-css](https://github.com/jacobbuck/easings-css) - Easing functions for CSS.
 
 ```scss
