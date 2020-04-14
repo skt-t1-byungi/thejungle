@@ -46,9 +46,9 @@
     }
 }
 
-@mixin stretch($top: null, $right: null, $bot: null, $left: null) {
+@mixin stretch($top: null, $right: null, $bottom: null, $left: null) {
     @if type-of($left) != number {
-        @if type-of($bot) != number {
+        @if type-of($bottom) != number {
             @if type-of($right) != number {
                 @if type-of($top) != number{
                     // when argument is 0
@@ -76,7 +76,7 @@
     position: absolute;
     top: $top;
     right: $right;
-    bottom: $bot;
+    bottom: $bottom;
     left: $left;
 }
 
