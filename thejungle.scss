@@ -132,7 +132,7 @@
 }
 
 @mixin animate($anime-opts) {
-    $name: __ANIMATE__#{unique_id()};
+    $name: THE_JUNGLE__ANIMATE__#{unique_id()};
     animation: $name $anime-opts;
     @keyframes #{$name} {@content}
 }

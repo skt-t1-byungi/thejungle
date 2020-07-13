@@ -129,5 +129,5 @@ test('animate', () => {
             to{width: 100%}
         }
     }`
-    expect(parse(scss)).toMatch(/\.a{animation:__ANIMATE__(\S+?) 1s infinite}@keyframes __ANIMATE__\1{from{width:0}to{width:100%}}/)
+    expect(parse(scss)).toMatch(/\.a{animation:THE_JUNGLE__ANIMATE__(\S+?) 1s infinite}@keyframes THE_JUNGLE__ANIMATE__\1{from{width:0}to{width:100%}}/)
 })
