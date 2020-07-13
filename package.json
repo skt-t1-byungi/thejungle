@@ -29,11 +29,11 @@
         "minireset.css": "^0.0.6"
     },
     "devDependencies": {
-        "@types/jest": "^26.0.0",
+        "@types/jest": "^26.0.4",
         "css-isolate": "^0.0.4",
-        "eslint": "^7.3.0",
-        "eslint-config-byungi": "^0.12.2",
-        "jest": "^26.0.1",
+        "eslint": "^7.4.0",
+        "eslint-config-byungi": "^0.12.4",
+        "jest": "^26.1.0",
         "node-sass": "^4.14.1"
     },
     "eslintConfig": {
