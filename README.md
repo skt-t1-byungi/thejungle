@@ -21,9 +21,6 @@ npm install thejungle
 ```
 
 ```scss
-@use 'thejungle' as *;
-
-// or
 @use 'thejungle' as tj;
 ```
 
@@ -34,10 +31,10 @@ npm install thejungle
 #### em(px [, base=16px])
 ```scss
 .a {
-    font-size: em(12px); // => 0.75em
+    font-size: tj.em(12px); // => 0.75tj.em
 
     .b {
-        font-size: em(10px, 12px); // => 0.833em
+        font-size: tj.em(10px, 12px); // => 0.833em
     }
 }
 ```
@@ -45,10 +42,10 @@ npm install thejungle
 #### rem(px [, base])
 ```scss
 .a {
-    font-size: rem(12px); // => 0.75rem
+    font-size: tj.rem(12px); // => 0.75rem
 
     .b {
-        font-size: em(10px, 12px); // => 0.833rem
+        font-size: tj.rem(10px, 12px); // => 0.833rem
     }
 }
 ```
@@ -58,7 +55,7 @@ Returns a formula that satisfies values ​​at each screen.
 
 ```scss
 .a {
-    font-size: between(10px, 100px, 400px, 1000px); // => calc(15vw - 50px);
+    font-size: tj.between(10px, 100px, 400px, 1000px); // => calc(15vw - 50px);
 }
 ```
 
@@ -68,19 +65,19 @@ Returns a formula that satisfies values ​​at each screen.
 #### size(width [, height=width])
 ```scss
 .a {
-    @include size(50px) // => width: 50px; height: 50px;
+    @include tj.size(50px) // => width: 50px; height: 50px;
 }
 
 .b {
-    @include size(50px, 100px) // => width: 50px; height: 100px;
+    @include tj.size(50px, 100px) // => width: 50px; height: 100px;
 }
 ```
 
 #### text-hide()
-##### input
+##### source
 ```scss
 .a {
-    @include text-hide()
+    @include tj.text-hide()
 }
 ```
 ##### output
@@ -92,10 +89,10 @@ Returns a formula that satisfies values ​​at each screen.
 ```
 
 #### ellipsis(width)
-##### input
+##### source
 ```scss
 .a {
-    @include ellipsis(100px)
+    @include tj.ellipsis(100px)
 }
 ```
 ##### output
@@ -110,10 +107,10 @@ Returns a formula that satisfies values ​​at each screen.
 ```
 
 #### clearfix
-##### input
+##### source
 ```scss
 .a {
-    @include clearfix
+    @include tj.clearfix
 }
 ```
 ##### output
@@ -126,10 +123,10 @@ Returns a formula that satisfies values ​​at each screen.
 ```
 
 #### stretch([top=0, right=top, bottom=top, left=top])
-##### input
+##### source
 ```scss
 .a {
-    @include stretch
+    @include tj.stretch
 }
 ```
 ##### output
@@ -145,16 +142,16 @@ Returns a formula that satisfies values ​​at each screen.
 ###### Support shorthand.
 ```scss
 .a {
-    @include stretch(10px)
+    @include tj.stretch(10px)
     // => top: 10px; right: 10px; bottom: 10px; left: 10px;
 
-    @include stretch(10px, 50px)
+    @include tj.stretch(10px, 50px)
     // => top: 10px; right: 50px; bottom: 10px; left: 50px;
 
-    @include stretch(10px, 50px, 100px)
+    @include tj.stretch(10px, 50px, 100px)
     // => top: 10px; right: 50px; bottom: 100px; left: 50px;
 
-    @include stretch(10px, 50px, 100px, 200px)
+    @include tj.stretch(10px, 50px, 100px, 200px)
     // => top: 10px; right: 50px; bottom: 100px; left: 200px;
 }
 ```
@@ -170,10 +167,10 @@ Returns a formula that satisfies values ​​at each screen.
 - bottom-left
 - bottom-right
 
-##### input
+##### source
 ```scss
 .a {
-    @include triangle(top, #000, 30px)
+    @include tj.triangle(top, #000, 30px)
 }
 ```
 ##### output
@@ -189,10 +186,10 @@ Returns a formula that satisfies values ​​at each screen.
 
 
 #### column(count, gap[, fix=0])
-##### input
+##### source
 ```scss
 .column {
-    @include column(4, 10px)
+    @include tj.column(4, 10px)
 }
 ```
 ##### output
@@ -206,10 +203,10 @@ Returns a formula that satisfies values ​​at each screen.
 ```
 
 #### animate(options)
-##### input
+##### source
 ```scss
 .a {
-    @include animate(1s infinite) {
+    @include tj.animate(1s infinite) {
         from{ width: 0 }
         to{ width: 100% }
     }
@@ -235,11 +232,11 @@ Returns a formula that satisfies values ​​at each screen.
 ```
 #### [include-media](https://eduardoboucas.github.io/include-media/) - Simple, elegant and maintainable media queries in Sass
 ```scss
-@use 'thejungle/media';
+@use 'thejungle/media' as *;
 ```
 #### [easings-css](https://github.com/jacobbuck/easings-css) - Easing functions for CSS.
 ```scss
-@use 'thejungle/easings';
+@use 'thejungle/easings' as es;
 ```
 
 ## License
