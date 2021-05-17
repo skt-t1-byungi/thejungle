@@ -1,11 +1,19 @@
 # thejungle
-> scss utility collection
+scss utility collection
 
-![bengi](./thejungle.png)
+![bengi](./sig.png)
+
 
 [![npm](https://img.shields.io/npm/v/thejungle.svg?style=flat-square)](https://www.npmjs.com/package/thejungle)
 [![npm](https://img.shields.io/npm/dt/thejungle.svg?style=flat-square)](https://www.npmjs.com/package/thejungle)
 
+
+<details>
+<summary>Why is the name thejungle?</summary>
+<p></p>
+
+![bengi](./god.jpg)
+</details>
 
 ## Install
 ```sh
@@ -13,19 +21,17 @@ npm install thejungle
 ```
 
 ```scss
-// If use sass-loader
-@import '~thejungle';
+@use 'thejungle' as *;
 
 // or
-@import 'node_modules/thejungle/thejungle';
+@use 'thejungle' as tj;
 ```
 
 ## API
 
-### Function
+### functions
 
 #### em(px [, base=16px])
-Convert `px` to `em`.
 ```scss
 .a {
     font-size: em(12px); // => 0.75em
@@ -37,7 +43,6 @@ Convert `px` to `em`.
 ```
 
 #### rem(px [, base])
-Convert `px` to `rem`.
 ```scss
 .a {
     font-size: rem(12px); // => 0.75rem
@@ -57,12 +62,10 @@ Returns a formula that satisfies values ​​at each screen.
 }
 ```
 
----
 
-### Mixin
+### mixins
 
 #### size(width [, height=width])
-Set `width` and `height`.
 ```scss
 .a {
     @include size(50px) // => width: 50px; height: 50px;
@@ -74,13 +77,13 @@ Set `width` and `height`.
 ```
 
 #### text-hide()
-Hide a text.
+##### input
 ```scss
 .a {
     @include text-hide()
 }
 ```
-`output`
+##### output
 ```css
 .a {
     overflow: hidden;
@@ -89,13 +92,13 @@ Hide a text.
 ```
 
 #### ellipsis(width)
-Set an ellipsis effect.
+##### input
 ```scss
 .a {
     @include ellipsis(100px)
 }
 ```
-`output`
+##### output
 ```css
 .a {
     max-width: 100px;
@@ -107,13 +110,13 @@ Set an ellipsis effect.
 ```
 
 #### clearfix
-Set a clearfix.
+##### input
 ```scss
 .a {
     @include clearfix
 }
 ```
-`output`
+##### output
 ```css
 .a::after {
     content: '';
@@ -123,13 +126,13 @@ Set a clearfix.
 ```
 
 #### stretch([top=0, right=top, bottom=top, left=top])
-Stretch a element.
+##### input
 ```scss
 .a {
     @include stretch
 }
 ```
-`output`
+##### output
 ```css
 .a {
     position: absolute;
@@ -139,7 +142,6 @@ Stretch a element.
     left: 0;
 }
 ```
-
 ###### Support shorthand.
 ```scss
 .a {
@@ -158,23 +160,7 @@ Stretch a element.
 ```
 
 #### triangle(direction, color, width [, height=width/2])
-Set triangle shape.
-```scss
-.a {
-    @include triangle(top, #000, 30px)
-}
-```
-`output`
-```css
-.a {
-    border-style: solid;
-    height: 0;
-    width: 0;
-    border-color: transparent transparent #000 transparent;
-    border-width: 0 15px 15px 15px;
-}
-```
-##### direction
+###### direction
 - top
 - right
 - bottom
@@ -184,15 +170,32 @@ Set triangle shape.
 - bottom-left
 - bottom-right
 
+##### input
+```scss
+.a {
+    @include triangle(top, #000, 30px)
+}
+```
+##### output
+```css
+.a {
+    border-style: solid;
+    height: 0;
+    width: 0;
+    border-color: transparent transparent #000 transparent;
+    border-width: 0 15px 15px 15px;
+}
+```
+
 
 #### column(count, gap[, fix=0])
-Set a column.
+##### input
 ```scss
 .column {
     @include column(4, 10px)
 }
 ```
-`output`
+##### output
 ```css
 .column {
     width: calc(25% - 7.5px);
@@ -203,8 +206,7 @@ Set a column.
 ```
 
 #### animate(options)
-Set a keyframe animation.
-
+##### input
 ```scss
 .a {
     @include animate(1s infinite) {
@@ -213,7 +215,7 @@ Set a keyframe animation.
     }
 }
 ```
-`output`
+##### output
 ```css
 .a {
     animation: __ANIMATE__u0bd4b920 1s infinite; /* 👈 "__ANIMATE__u0bd4b920" is unique. */
@@ -225,24 +227,19 @@ Set a keyframe animation.
 }
 ```
 
----
+### module alias
 
-### Loader
-
-- [minireset](https://jgthms.com/minireset.css/) - A tiny modern CSS reset
-- [include-media](https://eduardoboucas.github.io/include-media/) - Simple, elegant and maintainable media queries in Sass
-- [easings-css](https://github.com/jacobbuck/easings-css) - Easing functions for CSS.
-
+#### [minireset](https://jgthms.com/minireset.css/) - A tiny modern CSS reset
 ```scss
-// If use sass-loader
-@import '~thejungle/reset';
-@import '~thejungle/media';
-@import '~thejungle/easings';
-
-// or
-@import 'node_modules/thejungle/reset';
-@import 'node_modules/thejungle/media';
-@import 'node_modules/thejungle/easings';
+@use 'thejungle/reset';
+```
+#### [include-media](https://eduardoboucas.github.io/include-media/) - Simple, elegant and maintainable media queries in Sass
+```scss
+@use 'thejungle/media';
+```
+#### [easings-css](https://github.com/jacobbuck/easings-css) - Easing functions for CSS.
+```scss
+@use 'thejungle/easings';
 ```
 
 ## License
