@@ -2,7 +2,7 @@
     "name": "thejungle",
     "description": "scss utility collection",
     "version": "1.0.5",
-    "main": "thejungle.scss",
+    "main": "index.scss",
     "repository": "https://github.com/skt-t1-byungi/thejungle.git",
     "keywords": [
         "scss",
@@ -21,22 +21,22 @@
     "author": "skt-t1-byungi <tiniwz@gmail.com>",
     "license": "MIT",
     "scripts": {
-        "test": "jest"
+        "test": "mocha test.js"
     },
     "dependencies": {
-        "easings-css": "^1.0.0",
-        "include-media": "^1.4.9",
-        "minireset.css": "^0.0.6"
+        "easings-css": "^2.0.3",
+        "include-media": "^1.4.10",
+        "minireset.css": "^0.0.7"
+    },
+    "prettier": {
+        "semi": false,
+        "singleQuote": true,
+        "printWidth": 120,
+        "tabWidth": 4
     },
     "devDependencies": {
-        "@types/jest": "^26.0.4",
-        "css-isolate": "^0.0.4",
-        "eslint": "^7.4.0",
-        "eslint-config-byungi": "^0.12.4",
-        "jest": "^26.1.0",
-        "node-sass": "^4.14.1"
-    },
-    "eslintConfig": {
-        "extends": "byungi"
+        "mocha": "^8.4.0",
+        "sass": "^1.32.13",
+        "sass-true": "^6.0.1"
     }
 }

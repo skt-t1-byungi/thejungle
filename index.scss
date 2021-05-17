@@ -1,4 +1,4 @@
-@function __px__($n) {
+@function -px($n) {
     @if unitless($n) {
         @return $n;
     }
@@ -9,25 +9,26 @@
 }
 
 @function em($px, $base: 16px) {
-    @return __px__($px) / __px__($base) * 1em;
+    @return -px($px) / -px($base) * 1em;
 }
 
 @function rem($px, $base: 16px) {
-    @return __px__($px) / __px__($base) * 1rem;
+    @return -px($px) / -px($base) * 1rem;
 }
 
 @function between($from, $to, $from-screen: 320px, $to-screen: 1200px) {
-    $from: __px__($from);
-    $to: __px__($to);
-    $from-screen: __px__($from-screen);
-    $to-screen: __px__($to-screen);
+    $from: -px($from);
+    $to: -px($to);
+    $from-screen: -px($from-screen);
+    $to-screen: -px($to-screen);
     $rate: ($to - $from) / ($to-screen - $from-screen);
     $fix: $rate * $from-screen - $from;
     @return calc(#{$rate * 100}vw - #{$fix}px);
 }
 
 @mixin size($w, $h: $w) {
-    width: $w; height: $h
+    width: $w;
+    height: $h;
 }
 
 @mixin ellipsis($max-w) {
@@ -39,7 +40,7 @@
 }
 
 @mixin clearfix {
-    &::after{
+    &::after {
         content: '';
         display: block;
         clear: both;
@@ -50,7 +51,7 @@
     @if type-of($left) != number {
         @if type-of($bottom) != number {
             @if type-of($right) != number {
-                @if type-of($top) != number{
+                @if type-of($top) != number {
                     // when argument is 0
                     $top: 0;
                     $left: 0;
@@ -85,7 +86,7 @@
     height: 0;
     width: 0;
 
-    @if($dir == top) {
+    @if ($dir == top) {
         border-color: transparent transparent $color transparent;
         border-width: 0 ($w/2) $h ($w/2);
     }
@@ -125,14 +126,16 @@
 }
 
 @mixin column($count, $gap, $fix: 0) {
-    width: calc(#{percentage(1/$count)} - #{$gap * (1 - 1/$count)});
-    &:not(:nth-child(#{$count}n)){
+    width: calc(#{percentage(1 / $count)} - #{$gap * (1 - 1 / $count)});
+    &:not(:nth-child(#{$count}n)) {
         margin-right: $gap + $fix;
     }
 }
 
-@mixin animate($anime-opts) {
-    $name: THE_JUNGLE__ANIMATE__#{unique_id()};
+@mixin animate($anime-opts, $id: unique_id()) {
+    $name: THE_JUNGLE__ANIMATE__#{$id};
     animation: $name $anime-opts;
-    @keyframes #{$name} {@content}
+    @keyframes #{$name} {
+        @content;
+    }
 }
