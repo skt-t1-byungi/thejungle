@@ -15,7 +15,7 @@
     "files": [
         "media.scss",
         "reset.scss",
-        "thejungle.scss",
+        "index.scss",
         "easings.scss"
     ],
     "author": "skt-t1-byungi <tiniwz@gmail.com>",
