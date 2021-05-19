@@ -2,7 +2,7 @@
     "name": "thejungle",
     "description": "scss utility collection",
     "version": "2.0.0",
-    "main": "index.scss",
+    "main": "_index.scss",
     "repository": "https://github.com/skt-t1-byungi/thejungle.git",
     "keywords": [
         "scss",
@@ -13,10 +13,10 @@
         "util"
     ],
     "files": [
-        "media.scss",
-        "reset.scss",
-        "index.scss",
-        "easings.scss"
+        "_media.scss",
+        "_reset.scss",
+        "_index.scss",
+        "_easings.scss"
     ],
     "author": "skt-t1-byungi <tiniwz@gmail.com>",
     "license": "MIT",
