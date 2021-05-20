@@ -76,46 +76,30 @@
     @include it('em') {
         @include assert('px') {
             @include output {
-                .a {
-                    font-size: tj.em(12px);
-                    .b {
-                        font-size: tj.em(10px, 12px);
-                    }
-                }
+                a: tj.em(12px);
+                b: tj.em(10px, 12px);
             }
             @include expect {
-                .a {
-                    font-size: 0.75em;
-                }
-                .a .b {
-                    font-size: 0.8333333333em;
-                }
+                a: 0.75em;
+                b: 0.8333333333em;
             }
         }
         @include assert('pt') {
             @include output {
-                font-size: tj.em(12pt); //12pt == 16px
+                a: tj.em(12pt); //12pt == 16px
             }
             @include expect {
-                font-size: 1em;
+                a: 1em;
             }
         }
         @include assert('unitless') {
             @include output {
-                .a {
-                    font-size: tj.em(12);
-                    .b {
-                        font-size: tj.em(10px, 12);
-                    }
-                }
+                a: tj.em(12);
+                b: tj.em(10px, 12);
             }
             @include expect {
-                .a {
-                    font-size: 0.75em;
-                }
-                .a .b {
-                    font-size: 0.8333333333em;
-                }
+                a: 0.75em;
+                b: 0.8333333333em;
             }
         }
     }
@@ -123,46 +107,30 @@
     @include it('rem') {
         @include assert('px') {
             @include output {
-                .a {
-                    font-size: tj.rem(12px);
-                    .b {
-                        font-size: tj.rem(10px, 12px);
-                    }
-                }
+                a: tj.rem(12px);
+                b: tj.rem(10px, 12px);
             }
             @include expect {
-                .a {
-                    font-size: 0.75rem;
-                }
-                .a .b {
-                    font-size: 0.8333333333rem;
-                }
+                a: 0.75rem;
+                b: 0.8333333333rem;
             }
         }
         @include assert('pt') {
             @include output {
-                font-size: tj.rem(12pt); //12pt == 16px
+                a: tj.rem(12pt); //12pt == 16px
             }
             @include expect {
-                font-size: 1rem;
+                a: 1rem;
             }
         }
         @include assert('unitless') {
             @include output {
-                .a {
-                    font-size: tj.rem(12);
-                    .b {
-                        font-size: tj.rem(10px, 12);
-                    }
-                }
+                a: tj.rem(12);
+                b: tj.rem(10px, 12);
             }
             @include expect {
-                .a {
-                    font-size: 0.75rem;
-                }
-                .a .b {
-                    font-size: 0.8333333333rem;
-                }
+                a: 0.75rem;
+                b: 0.8333333333rem;
             }
         }
     }
@@ -170,14 +138,10 @@
     @include it('between') {
         @include assert {
             @include output {
-                .a {
-                    font-size: tj.between(10px, 100px, 400px, 1000px);
-                }
+                a: tj.between(10px, 100px, 400px, 1000px);
             }
             @include expect {
-                .a {
-                    font-size: calc(15vw - 50px);
-                }
+                a: calc(15vw - 50px);
             }
         }
     }
@@ -187,28 +151,20 @@
     @include it('size') {
         @include assert {
             @include output {
-                .a {
-                    @include tj.size(50px);
-                }
+                @include tj.size(50px);
             }
             @include expect {
-                .a {
-                    width: 50px;
-                    height: 50px;
-                }
+                width: 50px;
+                height: 50px;
             }
         }
         @include assert {
             @include output {
-                .a {
-                    @include tj.size(50px, 100px);
-                }
+                @include tj.size(50px, 100px);
             }
             @include expect {
-                .a {
-                    width: 50px;
-                    height: 100px;
-                }
+                width: 50px;
+                height: 100px;
             }
         }
     }
@@ -216,15 +172,11 @@
     @include it('text-hide') {
         @include assert {
             @include output {
-                .a {
-                    @include tj.text-hide();
-                }
+                @include tj.text-hide();
             }
             @include expect {
-                .a {
-                    overflow: hidden;
-                    text-indent: -9999px;
-                }
+                overflow: hidden;
+                text-indent: -9999px;
             }
         }
     }
@@ -232,18 +184,14 @@
     @include it('ellipsis') {
         @include assert {
             @include output {
-                .a {
-                    @include tj.ellipsis(100px);
-                }
+                @include tj.ellipsis(100px);
             }
             @include expect {
-                .a {
-                    display: inline-block;
-                    max-width: 100px;
-                    white-space: nowrap;
-                    overflow: hidden;
-                    text-overflow: ellipsis;
-                }
+                display: inline-block;
+                max-width: 100px;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
             }
         }
     }
@@ -268,82 +216,62 @@
     @include it('stretch') {
         @include assert {
             @include output {
-                .a {
-                    @include tj.stretch;
-                }
+                @include tj.stretch;
             }
             @include expect {
-                .a {
-                    position: absolute;
-                    top: 0;
-                    right: 0;
-                    bottom: 0;
-                    left: 0;
-                }
+                position: absolute;
+                top: 0;
+                right: 0;
+                bottom: 0;
+                left: 0;
             }
         }
         @include assert {
             @include output {
-                .a {
-                    @include tj.stretch(10px);
-                }
+                @include tj.stretch(10px);
             }
             @include expect {
-                .a {
-                    position: absolute;
-                    top: 10px;
-                    right: 10px;
-                    bottom: 10px;
-                    left: 10px;
-                }
+                position: absolute;
+                top: 10px;
+                right: 10px;
+                bottom: 10px;
+                left: 10px;
             }
         }
         @include assert {
             @include output {
-                .a {
-                    @include tj.stretch(10px, 50px);
-                }
+                @include tj.stretch(10px, 50px);
             }
             @include expect {
-                .a {
-                    position: absolute;
-                    top: 10px;
-                    right: 50px;
-                    bottom: 10px;
-                    left: 50px;
-                }
+                position: absolute;
+                top: 10px;
+                right: 50px;
+                bottom: 10px;
+                left: 50px;
             }
         }
         @include assert {
             @include output {
-                .a {
-                    @include tj.stretch(10px, 50px, 100px);
-                }
+                @include tj.stretch(10px, 50px, 100px);
             }
             @include expect {
-                .a {
-                    position: absolute;
-                    top: 10px;
-                    right: 50px;
-                    bottom: 100px;
-                    left: 50px;
-                }
+                position: absolute;
+                top: 10px;
+                right: 50px;
+                bottom: 100px;
+                left: 50px;
             }
         }
         @include assert {
             @include output {
-                .a {
-                    @include tj.stretch(10px, 50px, 100px, 200px);
-                }
+                @include tj.stretch(10px, 50px, 100px, 200px);
             }
             @include expect {
-                .a {
-                    position: absolute;
-                    top: 10px;
-                    right: 50px;
-                    bottom: 100px;
-                    left: 200px;
-                }
+                position: absolute;
+                top: 10px;
+                right: 50px;
+                bottom: 100px;
+                left: 200px;
             }
         }
     }
@@ -351,18 +279,14 @@
     @include it('triangle') {
         @include assert {
             @include output {
-                .a {
-                    @include tj.triangle(top, #000, 30px);
-                }
+                @include tj.triangle(top, #000, 30px);
             }
             @include expect {
-                .a {
-                    border-style: solid;
-                    height: 0;
-                    width: 0;
-                    border-color: transparent transparent #000 transparent;
-                    border-width: 0 15px 15px 15px;
-                }
+                border-style: solid;
+                height: 0;
+                width: 0;
+                border-color: transparent transparent #000 transparent;
+                border-width: 0 15px 15px 15px;
             }
         }
     }
