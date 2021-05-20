@@ -12,13 +12,7 @@ $-base-size: 16px !default;
     @return $n / math.unit($n);
 }
 
-@function dir-shorthand($args) {
-    $default: (
-        top: 0,
-        right: 0,
-        bottom: 0,
-        left: 0,
-    );
+@function dir-shorthand($args, $default: ()) {
     $map: meta.keywords($args);
     @if list.length($map) > 0 {
         @return map.merge($default, $map);
@@ -82,7 +76,15 @@ $-base-size: 16px !default;
 }
 
 @mixin stretch($args...) {
-    $map: dir-shorthand($args);
+    $map: dir-shorthand(
+        $args,
+        (
+            top: 0,
+            right: 0,
+            bottom: 0,
+            left: 0,
+        )
+    );
     position: absolute;
     top: map.get($map, 'top');
     right: map.get($map, 'right');
