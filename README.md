@@ -28,7 +28,7 @@ npm install thejungle
 
 ### functions
 
-#### em(px [, base=16px])
+#### em(value [, base=16px])
 ```scss
 .a {
     font-size: tj.em(12px); // => 0.75tj.em
@@ -39,7 +39,7 @@ npm install thejungle
 }
 ```
 
-#### rem(px [, base])
+#### rem(value [, base])
 ```scss
 .a {
     font-size: tj.rem(12px); // => 0.75rem

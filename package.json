@@ -21,7 +21,8 @@
     "author": "skt-t1-byungi <tiniwz@gmail.com>",
     "license": "MIT",
     "scripts": {
-        "test": "mocha test.js"
+        "test": "mocha test.js",
+        "testw": "mocha test.js -w --watch-files *.scss"
     },
     "dependencies": {
         "easings-css": "^2.0.3",

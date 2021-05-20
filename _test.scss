@@ -3,7 +3,7 @@
 
 @include describe('fn') {
     @include it('em') {
-        @include assert {
+        @include assert('px') {
             @include output {
                 .a {
                     font-size: tj.em(12px);
@@ -21,15 +21,67 @@
                 }
             }
         }
+        @include assert('pt') {
+            @include output {
+                font-size: tj.em(12pt); //12pt == 16px
+            }
+            @include expect {
+                font-size: 1em;
+            }
+        }
+        @include assert('unitless') {
+            @include output {
+                .a {
+                    font-size: tj.em(12);
+                    .b {
+                        font-size: tj.em(10px, 12);
+                    }
+                }
+            }
+            @include expect {
+                .a {
+                    font-size: 0.75em;
+                }
+                .a .b {
+                    font-size: 0.8333333333em;
+                }
+            }
+        }
     }
 
     @include it('rem') {
-        @include assert {
+        @include assert('px') {
             @include output {
                 .a {
                     font-size: tj.rem(12px);
                     .b {
                         font-size: tj.rem(10px, 12px);
+                    }
+                }
+            }
+            @include expect {
+                .a {
+                    font-size: 0.75rem;
+                }
+                .a .b {
+                    font-size: 0.8333333333rem;
+                }
+            }
+        }
+        @include assert('pt') {
+            @include output {
+                font-size: tj.rem(12pt); //12pt == 16px
+            }
+            @include expect {
+                font-size: 1rem;
+            }
+        }
+        @include assert('unitless') {
+            @include output {
+                .a {
+                    font-size: tj.rem(12);
+                    .b {
+                        font-size: tj.rem(10px, 12);
                     }
                 }
             }

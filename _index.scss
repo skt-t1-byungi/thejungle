@@ -3,13 +3,13 @@
 @use "sass:map";
 @use "sass:list";
 
-$-base-size: 16px !default;
+$default-base-size: 16px !default;
 
-@function strip-unit($n) {
-    @if math.is-unitless($n) {
-        @return $n;
+@function strip-unit($number) {
+    @if math.is-unitless($number) {
+        @return $number;
     }
-    @return $n / math.unit($n);
+    @return $number / ($number * 0 + 1);
 }
 
 @function dir-shorthand($args, $default: ()) {
@@ -37,11 +37,19 @@ $-base-size: 16px !default;
     @return (top: $top, right: $right, bottom: $bottom, left: $left);
 }
 
-@function em($value, $base: $-base-size) {
+@function em($value, $base: $default-base-size) {
+    @if math.is-unitless($value) or math.is-unitless($base) {
+        $value: strip-unit($value);
+        $base: strip-unit($base);
+    }
     @return strip-unit($value / $base) * 1em;
 }
 
-@function rem($value, $base: $-base-size) {
+@function rem($value, $base: $default-base-size) {
+    @if math.is-unitless($value) or math.is-unitless($base) {
+        $value: strip-unit($value);
+        $base: strip-unit($base);
+    }
     @return strip-unit($value / $base) * 1rem;
 }
 
