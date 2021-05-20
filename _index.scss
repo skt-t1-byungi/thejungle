@@ -4,15 +4,15 @@
 @use "sass:list";
 
 $default-base-size: 16px !default;
+$default-dir-shorthand: ();
+$default-from-screen: 320px;
+$default-to-screen: 1200px;
 
 @function strip-unit($number) {
-    @if math.is-unitless($number) {
-        @return $number;
-    }
     @return $number / ($number * 0 + 1);
 }
 
-@function dir-shorthand($args, $default: ()) {
+@function dir-shorthand($args, $default: $default-dir-shorthand) {
     $map: meta.keywords($args);
     @if list.length($map) > 0 {
         @return map.merge($default, $map);
@@ -53,7 +53,7 @@ $default-base-size: 16px !default;
     @return strip-unit($value / $base) * 1rem;
 }
 
-@function between($from-value, $to-value, $from-screen: 320px, $to-screen: 1200px) {
+@function between($from-value, $to-value, $from-screen: $default-from-screen, $to-screen: $to-from-screen) {
     $rate: strip-unit(($to-value - $from-value) / ($to-screen - $from-screen));
     $fix: $rate * $from-screen - $from-value;
     @if math.is-unitless($fix) {
@@ -104,7 +104,6 @@ $default-base-size: 16px !default;
     border-style: solid;
     height: 0;
     width: 0;
-
     @if ($direction == top) {
         border-color: transparent transparent $color transparent;
         border-width: 0 ($width/2) $height ($width/2);

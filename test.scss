@@ -1,7 +1,78 @@
 @use './node_modules/sass-true' as *;
 @use './index.scss' as tj;
 
+@function dir-shorthand($args...) {
+    @return tj.dir-shorthand($args);
+}
+
 @include describe('fn') {
+    @include it('strip-unit') {
+        @include assert {
+            @include output {
+                a: tj.strip-unit(7px);
+                b: tj.strip-unit(12em);
+                c: tj.strip-unit(31pt);
+            }
+            @include expect {
+                a: 7;
+                b: 12;
+                c: 31;
+            }
+        }
+    }
+
+    @include it('dir-shorthand') {
+        @include assert-equal(
+            dir-shorthand(1px),
+            (
+                top: 1px,
+                right: 1px,
+                bottom: 1px,
+                left: 1px,
+            )
+        );
+        @include assert-equal(
+            dir-shorthand(1px, 2px),
+            (
+                top: 1px,
+                right: 2px,
+                bottom: 1px,
+                left: 2px,
+            )
+        );
+        @include assert-equal(
+            dir-shorthand(1px, 2px, 3px),
+            (
+                top: 1px,
+                right: 2px,
+                bottom: 3px,
+                left: 2px,
+            )
+        );
+        @include assert-equal(
+            dir-shorthand(1px, 2px, 3px, 4px),
+            (
+                top: 1px,
+                right: 2px,
+                bottom: 3px,
+                left: 4px,
+            )
+        );
+        @include assert-equal(
+            dir-shorthand($top: 1px),
+            (
+                top: 1px,
+            )
+        );
+        @include assert-equal(
+            dir-shorthand($top: 1px, $left: 2px),
+            (
+                top: 1px,
+                left: 2px,
+            )
+        );
+    }
+
     @include it('em') {
         @include assert('px') {
             @include output {

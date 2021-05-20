@@ -1,1 +1,1 @@
-require('sass-true').runSass({ file: `${__dirname}/_test.scss` }, { describe, it })
+require('sass-true').runSass({ file: `${__dirname}/test.scss` }, { describe, it })
