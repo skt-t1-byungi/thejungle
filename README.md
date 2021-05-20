@@ -44,7 +44,7 @@ npm install thejungle
 ##### Override default base
 ```scss
 @use 'thejungle' as tj with (
-    $default-base-size: 12px;
+    $default-base-size: 12px
 )
 
 @debug tj.em(12px); // => 1em
@@ -60,7 +60,7 @@ npm install thejungle
 ##### Override default base
 ```scss
 @use 'thejungle' as tj with (
-    $default-base-size: 12px;
+    $default-base-size: 12px
 )
 
 @debug tj.rem(12px); // => 1em
@@ -76,20 +76,20 @@ Returns a formula that satisfies values ​​at each screen.
 ##### Override default screen size
 ```scss
 @use 'thejungle' as tj with (
-    $default-from-screen: 400px;
-    $default-to-screen: 1800px;
+    $default-from-screen: 400px,
+    $default-to-screen: 1800px
 )
 
 @debug tj.between(10px, 100px); // => tj.between(10px, 100px, 400px, 1800px);
 ```
 
-#### dir-shorthand(args [, default])
+#### pos-shorthand(args [, default])
 ```scss
 @function fn1($args...) {
-    @debug tj.dir-shorthand($args);
+    @debug tj.pos-shorthand($args);
 }
 @function fn2($args...) {
-    @debug tj.dir-shorthand($args, (top: 10px, left: 10px));
+    @debug tj.pos-shorthand($args, (top: 10px, left: 10px));
 }
 
 // empty arguments
@@ -103,14 +103,14 @@ fn1(1px, 2px, 3px); // => (top: 1px; right: 2px; bottom: 3px; left:2px)
 fn1(1px, 2px, 3px, 4px); // => (top: 1px; right: 2px; bottom: 3px; left:4px)
 
 // named arguments
-fn1(top: 5px); // => (top: 5px;)
-fn2(top: 5px); // => (top: 5px; left:10px)
+fn1($top: 5px); // => (top: 5px;)
+fn2($top: 5px); // => (top: 5px; left:10px)
 ```
 
 ##### Override default position
 ```scss
 @use 'thejungle' as tj with (
-    $default-dir-shorthand: (top: 30px; left: 100px);
+    $default-pos-shorthand: (top: 30px; left: 100px)
 )
 ```
 

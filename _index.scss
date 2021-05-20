@@ -12,7 +12,7 @@ $default-to-screen: 1200px;
     @return $number / ($number * 0 + 1);
 }
 
-@function dir-shorthand($args, $default: $default-dir-shorthand) {
+@function pos-shorthand($args, $default: $default-dir-shorthand) {
     $map: meta.keywords($args);
     @if list.length($map) > 0 {
         @return map.merge($default, $map);
@@ -84,7 +84,7 @@ $default-to-screen: 1200px;
 }
 
 @mixin stretch($args...) {
-    $map: dir-shorthand(
+    $map: pos-shorthand(
         $args,
         (
             top: 0,

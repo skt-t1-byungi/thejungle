@@ -1,8 +1,8 @@
 @use './node_modules/sass-true' as *;
 @use './index.scss' as tj;
 
-@function dir-shorthand($args...) {
-    @return tj.dir-shorthand($args);
+@function pos-shorthand($args...) {
+    @return tj.pos-shorthand($args);
 }
 
 @include describe('fn') {
@@ -21,9 +21,9 @@
         }
     }
 
-    @include it('dir-shorthand') {
+    @include it('pos-shorthand') {
         @include assert-equal(
-            dir-shorthand(1px),
+            pos-shorthand(1px),
             (
                 top: 1px,
                 right: 1px,
@@ -32,7 +32,7 @@
             )
         );
         @include assert-equal(
-            dir-shorthand(1px, 2px),
+            pos-shorthand(1px, 2px),
             (
                 top: 1px,
                 right: 2px,
@@ -41,7 +41,7 @@
             )
         );
         @include assert-equal(
-            dir-shorthand(1px, 2px, 3px),
+            pos-shorthand(1px, 2px, 3px),
             (
                 top: 1px,
                 right: 2px,
@@ -50,7 +50,7 @@
             )
         );
         @include assert-equal(
-            dir-shorthand(1px, 2px, 3px, 4px),
+            pos-shorthand(1px, 2px, 3px, 4px),
             (
                 top: 1px,
                 right: 2px,
@@ -59,13 +59,13 @@
             )
         );
         @include assert-equal(
-            dir-shorthand($top: 1px),
+            pos-shorthand($top: 1px),
             (
                 top: 1px,
             )
         );
         @include assert-equal(
-            dir-shorthand($top: 1px, $left: 2px),
+            pos-shorthand($top: 1px, $left: 2px),
             (
                 top: 1px,
                 left: 2px,
