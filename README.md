@@ -92,10 +92,6 @@ Returns a formula that satisfies values ​​at each screen.
     @debug tj.pos-shorthand($args, (top: 10px, left: 10px));
 }
 
-// empty arguments
-fn1(); // => ()
-fn2(); // => (top: 10px, left: 10px;)
-
 // unnamed arguments
 fn1(1px); // => (top: 1px; right: 1px; bottom: 1px; left:1px)
 fn1(1px, 2px); // => (top: 1px; right: 2px; bottom: 1px; left:2px)
@@ -105,6 +101,10 @@ fn1(1px, 2px, 3px, 4px); // => (top: 1px; right: 2px; bottom: 3px; left:4px)
 // named arguments
 fn1($top: 5px); // => (top: 5px;)
 fn2($top: 5px); // => (top: 5px; left:10px)
+
+// empty arguments
+fn1(); // => ()
+fn2(); // => (top: 10px, left: 10px;)
 ```
 
 ##### Override default position
