@@ -4,9 +4,9 @@
 @use "sass:list";
 
 $default-base-size: 16px !default;
-$default-dir-shorthand: ();
-$default-from-screen: 320px;
-$default-to-screen: 1200px;
+$default-dir-shorthand: () !default;
+$default-from-screen: 320px !default;
+$default-to-screen: 1200px !default;
 
 @function strip-unit($number) {
     @return $number / ($number * 0 + 1);
