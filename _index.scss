@@ -9,7 +9,7 @@ $default-from-screen: 320px !default;
 $default-to-screen: 1200px !default;
 
 @function strip-unit($number) {
-    @return $number / ($number * 0 + 1);
+    @return math.div($number, ($number * 0 + 1));
 }
 
 @function pos-shorthand($args, $default: $default-dir-shorthand) {
@@ -42,7 +42,7 @@ $default-to-screen: 1200px !default;
         $value: strip-unit($value);
         $base: strip-unit($base);
     }
-    @return strip-unit($value / $base) * 1em;
+    @return strip-unit(math.div($value, $base)) * 1em;
 }
 
 @function rem($value, $base: $default-base-size) {
@@ -50,11 +50,11 @@ $default-to-screen: 1200px !default;
         $value: strip-unit($value);
         $base: strip-unit($base);
     }
-    @return strip-unit($value / $base) * 1rem;
+    @return strip-unit(math.div($value, $base)) * 1rem;
 }
 
 @function between($from-value, $to-value, $from-screen: $default-from-screen, $to-screen: $to-from-screen) {
-    $rate: strip-unit(($to-value - $from-value) / ($to-screen - $from-screen));
+    $rate: strip-unit(math.div(($to-value - $from-value), ($to-screen - $from-screen)));
     $fix: $rate * $from-screen - $from-value;
     @if math.is-unitless($fix) {
         $fix: $fix * 1px;
@@ -100,25 +100,25 @@ $default-to-screen: 1200px !default;
     left: map.get($map, 'left');
 }
 
-@mixin triangle($direction, $color, $width, $height: $width/2) {
+@mixin triangle($direction, $color, $width, $height: math.div($width, 2)) {
     border-style: solid;
     height: 0;
     width: 0;
     @if ($direction == top) {
         border-color: transparent transparent $color transparent;
-        border-width: 0 ($width/2) $height ($width/2);
+        border-width: 0 math.div($width, 2) $height math.div($width, 2);
     }
     @if ($direction == bottom) {
         border-color: $color transparent transparent transparent;
-        border-width: $height ($width/2) 0 ($width/2);
+        border-width: $height math.div($width, 2) 0 math.div($width, 2);
     }
     @if ($direction == right) {
         border-color: transparent transparent transparent $color;
-        border-width: ($height/2) 0 ($height/2) $width;
+        border-width: math.div($height, 2) 0 math.div($height, 2) $width;
     }
     @if ($direction == left) {
         border-color: transparent $color transparent transparent;
-        border-width: ($height/2) $width ($height/2) 0;
+        border-width: math.div($height, 2) $width math.div($height, 2) 0;
     }
     @if ($direction == top-left) {
         border-color: $color transparent transparent transparent;
@@ -144,7 +144,7 @@ $default-to-screen: 1200px !default;
 }
 
 @mixin column($count, $gap, $fix: 0) {
-    width: calc(#{math.percentage(1 / $count)} - #{$gap * (1 - 1 / $count)});
+    width: calc(#{math.percentage(math.div(1, $count))} - #{$gap * (1 - math.div(1, $count))});
     &:not(:nth-child(#{$count}n)) {
         margin-right: $gap + $fix;
     }
