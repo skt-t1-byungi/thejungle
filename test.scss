@@ -375,11 +375,3 @@
         }
     }
 }
-
-@include describe('alias') {
-    @include it('import') {
-        @import './easings';
-        @import './reset';
-        @import './media';
-    }
-}
