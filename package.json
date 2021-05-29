@@ -13,10 +13,7 @@
         "util"
     ],
     "files": [
-        "_media.scss",
-        "_reset.scss",
-        "_index.scss",
-        "_easings.scss"
+        "_index.scss"
     ],
     "author": "skt-t1-byungi <tiniwz@gmail.com>",
     "license": "MIT",
