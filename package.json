@@ -21,11 +21,6 @@
         "test": "mocha test.js",
         "testw": "mocha test.js -w --watch-files *.scss"
     },
-    "dependencies": {
-        "easings-css": "^2.0.3",
-        "include-media": "^1.4.10",
-        "minireset.css": "^0.0.7"
-    },
     "prettier": {
         "semi": false,
         "singleQuote": true,
