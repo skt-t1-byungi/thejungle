@@ -272,20 +272,5 @@ Override the default values for mixin contents.
 }
 ```
 
-### module alias
-
-#### [minireset](https://jgthms.com/minireset.css/) - A tiny modern CSS reset
-```scss
-@use 'thejungle/reset';
-```
-#### [include-media](https://eduardoboucas.github.io/include-media/) - Simple, elegant and maintainable media queries in Sass
-```scss
-@use 'thejungle/media';
-```
-#### [easings-css](https://github.com/jacobbuck/easings-css) - Easing functions for CSS.
-```scss
-@use 'thejungle/easings';
-```
-
 ## License
 MIT
