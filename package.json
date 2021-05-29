@@ -1,7 +1,7 @@
 {
     "name": "thejungle",
     "description": "scss utility collection",
-    "version": "2.2.0",
+    "version": "3.0.0",
     "main": "_index.scss",
     "repository": "https://github.com/skt-t1-byungi/thejungle.git",
     "keywords": [
