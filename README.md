@@ -34,7 +34,7 @@ npm install thejungle
 @debug tj.strip-unit(4pt); // => 4
 ```
 
-#### em(value [, base=16px])
+#### em(value, base=16px)
 ```scss
 @debug tj.em(12px); // => 0.75em
 
@@ -50,7 +50,7 @@ npm install thejungle
 @debug tj.em(12px); // => 1em
 ```
 
-#### rem(value [, base])
+#### rem(value, base?)
 ```scss
 @debug tj.rem(12px); // => 0.75.rem
 
@@ -66,7 +66,7 @@ npm install thejungle
 @debug tj.rem(12px); // => 1em
 ```
 
-#### between(from-value, to-value [, from-screen=320px, to-screen=1200px])
+#### between(from-value, to-value, from-screen=320px, to-screen=1200px)
 Returns a formula that satisfies values ​​at each screen.
 
 ```scss
@@ -83,7 +83,7 @@ Returns a formula that satisfies values ​​at each screen.
 @debug tj.between(10px, 100px); // => tj.between(10px, 100px, 400px, 1800px);
 ```
 
-#### pos-shorthand(args [, default])
+#### pos-shorthand(args, default?)
 ```scss
 @function fn1($args...) {
     @debug tj.pos-shorthand($args);
@@ -93,18 +93,18 @@ Returns a formula that satisfies values ​​at each screen.
 }
 
 // unnamed arguments
-fn1(1px); // => (top: 1px; right: 1px; bottom: 1px; left:1px)
-fn1(1px, 2px); // => (top: 1px; right: 2px; bottom: 1px; left:2px)
-fn1(1px, 2px, 3px); // => (top: 1px; right: 2px; bottom: 3px; left:2px)
-fn1(1px, 2px, 3px, 4px); // => (top: 1px; right: 2px; bottom: 3px; left:4px)
+fn1(1px); // => Map(top: 1px; right: 1px; bottom: 1px; left:1px)
+fn1(1px, 2px); // => Map(top: 1px; right: 2px; bottom: 1px; left:2px)
+fn1(1px, 2px, 3px); // => Map(top: 1px; right: 2px; bottom: 3px; left:2px)
+fn1(1px, 2px, 3px, 4px); // => Map(top: 1px; right: 2px; bottom: 3px; left:4px)
 
 // named arguments
-fn1($top: 5px); // => (top: 5px;)
-fn2($top: 5px); // => (top: 5px; left:10px)
+fn1($top: 5px); // => Map(top: 5px;)
+fn2($top: 5px); // => Map(top: 5px; left:10px)
 
 // empty arguments
-fn1(); // => ()
-fn2(); // => (top: 10px, left: 10px;)
+fn1(); // => Map()
+fn2(); // => Map(top: 10px, left: 10px;)
 ```
 
 ##### Override default position
@@ -116,7 +116,7 @@ fn2(); // => (top: 10px, left: 10px;)
 
 ### mixins
 
-#### size(width [, height=width])
+#### size(width, height=width)
 ```scss
 @include tj.size(50px); // => width: 50px; height: 50px;
 
@@ -164,7 +164,7 @@ text-overflow: ellipsis;
 }
 ```
 
-#### stretch([top=0, right=top, bottom=top, left=top])
+#### stretch(top=0, right=top, bottom=top, left=top)
 ##### source
 ```scss
 @include tj.stretch;
@@ -192,7 +192,7 @@ left: 0;
 // => top: 10px; right: 50px; bottom: 100px; left: 200px;
 ```
 
-#### triangle(direction, color, width [, height=width/2])
+#### triangle(direction, color, width , height=width/2)
 ###### direction
 - top
 - right
@@ -216,7 +216,7 @@ border-color: transparent transparent #000 transparent;
 border-width: 0 15px 15px 15px;
 ```
 
-#### column(count, gap[, fix=0])
+#### column(count, gap, fix=0)
 ##### source
 ```scss
 .column {
@@ -252,6 +252,23 @@ border-width: 0 15px 15px 15px;
 @keyframes __ANIMATE__u0bd4b920 {
     from{ width: 0 }
     to{ width: 100% }
+}
+```
+
+#### scoped-default(base-size?, dir-shorthand?, from-screen?, to-screen?)
+Override the default values for mixin contents.
+
+```scss
+@debug tj.em(16px); // => 1em
+
+@include tj.scoped-default($base-size: 32px) {
+    @debug tj.em(16px); // => 0.5em
+
+    @include tj.scoped-default($base-size: 8px) {
+        @debug tj.em(16px); // => 2em
+    }
+
+    @debug tj.em(16px); // => 0.5em
 }
 ```
 

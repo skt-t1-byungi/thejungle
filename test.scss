@@ -353,6 +353,27 @@
             }
         }
     }
+
+    @include it('scoped-default') {
+        @include assert {
+            @include output {
+                a: tj.em(16px);
+                @include tj.scoped-default($base-size: 32px) {
+                    b: tj.em(16px);
+                    @include tj.scoped-default($base-size: 8px) {
+                        c: tj.em(16px);
+                    }
+                    d: tj.em(16px);
+                }
+            }
+            @include expect {
+                a: 1em;
+                b: 0.5em;
+                c: 2em;
+                d: 0.5em;
+            }
+        }
+    }
 }
 
 @include describe('alias') {

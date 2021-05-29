@@ -8,6 +8,28 @@ $default-dir-shorthand: () !default;
 $default-from-screen: 320px !default;
 $default-to-screen: 1200px !default;
 
+@mixin scoped-default(
+    $base-size: $default-base-size,
+    $dir-shorthand: $default-dir-shorthand,
+    $from-screen: $default-from-screen,
+    $to-screen: $default-to-screen
+) {
+    $tmp-base-size: $default-base-size;
+    $tmp-dir-shorthand: $default-dir-shorthand;
+    $tmp-from-screen: $default-from-screen;
+    $tmp-to-screen: $default-to-screen;
+
+    $default-base-size: $base-size !global;
+    $default-dir-shorthand: $dir-shorthand !global;
+    $default-from-screen: $from-screen !global;
+    $default-to-screen: $to-screen !global;
+    @content;
+    $default-base-size: $tmp-base-size !global;
+    $default-dir-shorthand: $tmp-dir-shorthand !global;
+    $default-from-screen: $tmp-from-screen !global;
+    $default-to-screen: $tmp-to-screen !global;
+}
+
 @function strip-unit($number) {
     @return math.div($number, ($number * 0 + 1));
 }
